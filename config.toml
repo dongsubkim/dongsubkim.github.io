@@ -23,7 +23,7 @@ theme = "LoveIt"
     since = 2022
   [params.home.profile]
       enable = true
-      avatarURL = "/images/profile.png"
+      avatarURL = "/images/profile.jpeg"
       subtitle = "Programmer rather than coder."
       # whether to use typeit animation for subtitle
       typeit = true
