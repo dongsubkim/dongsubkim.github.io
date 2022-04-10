@@ -1,4 +1,4 @@
-baseURL = "https://dongsubkim.github.io"
+baseURL = "https://dongsubkim.github.io/"
 # [en, zh-cn, fr, ...] determines default content language
 defaultContentLanguage = "en"
 # language code
