@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All Posts - DSKim blog</title>
+        <link>https://dongsubkim.github.io/posts/</link>
+        <description>All Posts | DSKim blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 10 Apr 2022 18:03:08 &#43;0900</lastBuildDate><atom:link href="https://dongsubkim.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>First Post</title>
+    <link>https://dongsubkim.github.io/posts/first-post/</link>
+    <pubDate>Sun, 10 Apr 2022 18:03:08 &#43;0900</pubDate>
+    <author>Author</author>
+    <guid>https://dongsubkim.github.io/posts/first-post/</guid>
+    <description><![CDATA[first post of github page blog based on hugo]]></description>
+</item></channel>
+</rss>
