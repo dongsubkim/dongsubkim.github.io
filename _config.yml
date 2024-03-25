@@ -123,7 +123,7 @@ content:
         description: | # this will include new lines to allow paragraphs
           - 질문에 대한 답을 통해 근처 로컬 매장에서 픽업 가능한 와인을 추천해 주는 웹사이트 (2021년 6월 ~ 서비스 중단)
           - 스타트업을 시작하고 싶어하는 친형이 부탁해 디자인을 받아 제작 ([노션 포스트](https://speckle-neem-ab4.notion.site/Winecork-2a1cb06960cf44649feb06b9076a3ba1))
-          - Go, PostgreSQL, AWS Beanstalk, Javascript, Heroku
+          - Go, PostgreSQL, AWS Beanstalk, Javascript, AWS Beanstalk
           
       - layout: left
         title: dskim.blog
