@@ -50,10 +50,13 @@ additional_links:
 about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
   어려운 비지니스 문제를 프로그래밍으로 해결하는 것을 좋아하는 3년차 웹 개발자입니다. 
+  물류 도메인에서 일하며 SCM, OMS 등의 도메인 특화 시스템을 처음부터 개발 후 런칭 및 
+  파트너 도메인에서 인증 시스템을 포함한 계정 관리 서비스 개발 경험이 있습니다.
 
-  주로 Kotlin과 Spring을 사용한 서버사이드 개발을 하고 반복적인 작업을 자동화하여 효율성을 높이는 것을 좋아합니다.  
+  주로 Kotlin과 Spring을 사용한 서버사이드 개발을 하고 반복적인 작업을 자동화하여 효율성을 높이는 것을 좋아합니다.
+  팀내에서 사용하는 코딩 컨벤션이나 개발 규칙들을 정립해 팀원들에게 공유해서 소스 코드의 유지보수성을 높이는 것을 좋아합니다.
 
-  테스트 코드의 중요성을 항상 생각하고 지속적인 유지보수가 가능한 코드를 생산하는 것에 집중합니다.
+  테스트 코드의 중요성을 항상 생각하고 지속적인 유지보수가 가능한 코드를 생산하기 위해서는 테스트 코드가 필수라고 생각하며 코드를 작성합니다.
 content:
   - title: Experience # Title for the section
     layout: list # Type of content section (list/text)
@@ -68,25 +71,24 @@ content:
         #   Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
         description: | # this will include new lines to allow paragraphs
           **오로라(파트너 센터) 계정 서비스**
-           - RubyOnRails 기반 레거시 시스템을 분석하여 새로운 파트너 계정 구조 디자인 및 Kotlin/Spring 기반 MSA 계정 서비스 개발
-           - 레거시 시스템에 대한 듀얼라이트 구현 및 21,336건의 데이터 마이그레이션으로 레거시 시스템을 바라보는 다른 서비스들의 무수정 연동 구축
-           - 기존의 Rails 세션 기반의 인증 시스템을 JWT와 Redis를 이용한 토큰 기반 인증 시스템으로 전환 및 이메일/SMS 2차 인증 서비스 구현
-           - Spring Cloud Gateway를 이용해 파트너 센터로 오는 요청에 대한 파트너 인증 여부 확인 후 다른 MSA 서비스로 전달 후 응답을 파싱하지 않고 바로 반환하는 필터 서비스 구현
-           - 오늘의집 직원이 파트너 센터에 파트너 계정으로 비밀번호 없이 접속이 가능하도록 JWT 인증 우회 기능([User Impersonate](https://medium.com/deskera-engineering/user-impersonation-f4939a82f38b)) 구현으로 파트너들이 문제가 생겼을 때 내부직원들이 접속해 문제 해결 기능 지원
-           - 파트너 센터 전체 시스템에 대한 오류 코드 일원화 및 예외 처리 공통화 제안으로 다른 서비스들과의 연동 오버헤드 최소화
-           - 파트너 계정 서비스 테스트 커버리지 76.3% 달성으로 서비스의 유지보수성 향상
+          - RubyOnRails 기반 레거시 시스템을 Kotlin/Spring 기반 MSA 파트너 계정 서비스로 전환 및 레거시 시스템에 대한 듀얼라이트 구현
+          - 기존의 Rails 세션 기반의 인증 시스템을 JWT와 Redis를 이용한 토큰 기반 인증 시스템으로 전환 및 이메일/SMS 2차 인증 서비스 구현
+          - Spring Cloud Gateway를 이용해 파트너 센터로 오는 요청에 대한 파트너 인증 여부 확인 후 다른 MSA 서비스로 전달 후 응답을 파싱하지 않고 바로 반환하는 필터 서비스 구현
+          - 오늘의집 직원이 파트너 센터에 파트너 계정으로 비밀번호 없이 접속이 가능하도록 JWT 인증 우회 기능([User Impersonate](https://medium.com/deskera-engineering/user-impersonation-f4939a82f38b)) 구현으로 파트너들이 문제가 생겼을 때 내부직원들이 접속해 문제 해결 기능 지원
+          - 파트너 센터 전체 시스템에 대한 오류 코드 일원화 및 예외 처리 공통화 제안으로 다른 서비스들과의 연동 오버헤드 최소화
+          - 파트너 계정 서비스 테스트 커버리지 76.3% 달성으로 서비스의 유지보수성 향상
 
-           **오늘의집 1P(자체 브랜드) 물류 서비스 센터 이원화 및 시스템 최적화**
-           - 상품-센터 매핑을 비롯해 주문 시점에 각 센터별 재고, 상품의 부피, 주소지등 센터별 복잡한 요구사항을 충족하는 최적 배송권역그룹 선정 알고리즘 및 주문 생성 로직 구현
-           - 주문 수정 요청 시 재고 로직 문제로 인한 장애를 재고 Lock 선점 방식으로 변경해 기존의 주당 2.83건의 요청 실패율에 대한 장애 제로화 진행 및 모니터링 추가
-           - 비지니스 요구사항으로 재고보다 많은 주문이 들어오는 과주문 형태를 해결하기 위해 과주문 발생에 대한 모니터링 추가 및 자동 알림 메세지 발송으로 CX 및 재고 관리 운영팀과의 커뮤니케이션 비용 절감
-           - 지속적인 코드 리팩토링(하드 코딩 제거, 수치 조정 UI 제공) 및 운영팀의 수기 업무 자동화로 지방 배송 상품 파손율 15% 감소, 지방 배송 리드타임 27% 단축 및 월 도급 비용 2000만원 비용 절감, 월 평균 166시간의 공수 단축 등의 회사 전체의 효율성 극대화
-           - 코드 퀄리티 및 유지보수성 향상을 위해 물류 서비스에 JaCoCo, detekt 및 ktlint 도입 후 814 건의 code smell 해결 및 테스트 코드 작성으로 테스트 커버리지 10%p 상승.
+          **오늘의집 1P(자체 브랜드) 물류 서비스 센터 이원화 및 시스템 최적화**
+          - 상품-센터 매핑을 비롯해 주문 시점에 각 센터별 재고, 상품의 부피, 주소지등 센터별 복잡한 요구사항을 충족하는 최적 배송권역그룹 선정 알고리즘 및 주문 생성 로직 구현
+          - 비지니스 요구사항으로 재고보다 많은 주문이 들어오는 과주문 형태를 해결하기 위해 과주문 발생에 대한 모니터링 추가 및 자동 알림 메세지 발송으로 CX 및 재고 관리 운영팀과의 커뮤니케이션 비용 절감
+          - 주문 수정 요청 시 재고 로직 내의 버그를 찾아내 주당 2.83건 요청 실패 건에 대한 장애 제로화
+          - 지속적인 코드 리팩토링(하드 코딩 제거, 수치 조정 UI 제공) 및 운영팀의 수기 업무 자동화로 지방 배송 상품 파손율 15% 감소, 지방 배송 리드타임 27% 단축 및 월 도급 비용 2000만원 비용 절감, 월 평균 166시간의 공수 단축 등의 회사 전체의 효율성 극대화
+          - 코드 퀄리티 및 유지보수성 향상을 위해 물류 서비스에 JaCoCo, detekt 및 ktlint 도입 후 814 건의 code smell 해결 및 테스트 코드 작성으로 테스트 커버리지 10%p 상승.
            
-           **오늘의집 1P(자체 브랜드) 상품 발주 및 입고 시스템**
-           - 수기 운영으로 인해 정보 추적 및 정산 데이터 정합성 보장이 불가능하던 1P 발주/입고를 시스템화 하는 배송 상품 발주 및 입고 시스템(Supply Chain Management)을 MSA 서비스로 개발
-           - SCM 시스템의 발주 및 입고 시스템 데이터베이스 디자인 및 Kotlin/Spring 백엔드 개발과Typescript/React 기반 파트너용 프론드엔드 웹 서비스 개발
-           - 발주 내역 히스토리 저장을 위한 MongoDB 도입 후 Hibernate interceptor를 이용한 메인 데이터베이스 MySQL과의 다중 데이터베이스 트랜잭션 구현
+          **오늘의집 1P(자체 브랜드) 상품 발주 및 입고 시스템**
+          - 수기 운영으로 인해 정보 추적 및 정산 데이터 정합성 보장이 불가능하던 1P 발주/입고를 시스템화 하는 배송 상품 발주 및 입고 시스템(Supply Chain Management)을 MSA 서비스로 개발
+          - SCM 시스템의 발주 및 입고 시스템 데이터베이스 디자인 및 Kotlin/Spring 백엔드 개발과Typescript/React 기반 파트너용 프론드엔드 웹 서비스 개발
+          - 발주 내역 히스토리 저장을 위한 MongoDB 도입 후 Hibernate interceptor를 이용한 메인 데이터베이스 MySQL과의 다중 데이터베이스 트랜잭션 구현
            
       - layout: left
         title: Naver Corporation
@@ -111,52 +113,23 @@ content:
     content:
       - layout: left
         title: Lunchbox
-        link: https://speckle-neem-ab4.notion.site/Lunchbox-0a9b3ee2b87c42b8b47dba18dbcf7116
-        link_text: Notion Link
-        additional_links:
-          - title: APP_repo
-            icon: fab fa-github
-            url: https://github.com/SideProjectByDJH/lunchbox_app
-          - title: API_repo
-            icon: fab fa-github
-            url: https://github.com/SideProjectByDJH/lunchbox_api
-        # quote: >
-        #   This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
         description: | # this will include new lines to allow paragraphs
-          - 매일 매일 도시락을 싸서 다니는 사람들을 위한 도시락 사진 공유 앱
-          - 2024년 5월 배포 예정
+          - 매일 매일 도시락을 싸서 다니는 사람들을 위한 도시락 사진 공유 앱 (2024년 5월 배포 예정)
+          - 앱 개발에 대한 모든 과정에 대해 공부하고 싶어 시작한 사이드 프로젝트 ([노션 포스트](https://speckle-neem-ab4.notion.site/Lunchbox-0a9b3ee2b87c42b8b47dba18dbcf7116))
           - Java, Spring, React Native
+
       - layout: left
         title: Winecork
-        link: https://speckle-neem-ab4.notion.site/Winecork-2a1cb06960cf44649feb06b9076a3ba1
-        link_text: Notion Link
-        additional_links:
-          - title: repo
-            icon: fab fa-github
-            url: https://github.com/dongsubkim/winecork
-        # quote: >
-        #   This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
         description: | # this will include new lines to allow paragraphs
-          - 질문에 대한 답을 통해 근처 로컬 매장에서 픽업 가능한 와인을 추천해 주는 웹사이트
-          - 스타트업을 시작하고 싶어하는 친형이 부탁해 디자인을 받아 제작
+          - 질문에 대한 답을 통해 근처 로컬 매장에서 픽업 가능한 와인을 추천해 주는 웹사이트 (2021년 6월 ~ 서비스 중단)
+          - 스타트업을 시작하고 싶어하는 친형이 부탁해 디자인을 받아 제작 ([노션 포스트](https://speckle-neem-ab4.notion.site/Winecork-2a1cb06960cf44649feb06b9076a3ba1))
           - Go, PostgreSQL, AWS Beanstalk, Javascript, Heroku
           
       - layout: left
         title: dskim.blog
-        link: https://speckle-neem-ab4.notion.site/Winecork-2a1cb06960cf44649feb06b9076a3ba1
-        link_text: Notion Link
-        additional_links:
-          - title: repo
-            icon: fab fa-github
-            url: https://github.com/dongsubkim/myblogv2
-          - title: repo
-            icon: fab fa-github
-            url: https://github.com/dongsubkim/myblog
-        # quote: >
-        #   This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
         description: | # this will include new lines to allow paragraphs
-          - 개인 블로그 
-          - 웹 개발에 대한 경험을 쌓기 위해 여러 스택으로 클론해가며 제작
+          - 개인 블로그 (2021년 4월 ~ 서비스 중단)
+          - 웹 개발에 대한 경험을 쌓기 위해 여러 스택으로 클론해가며 제작 ([노션 포스트](https://speckle-neem-ab4.notion.site/dskim-blog-179170ed17e44113b0df31d852117c63))
           - Node.js, Express, MongoDB, Go, PostgreSQL, javascript, Heroku
           
   - title: Education # Title for the section
