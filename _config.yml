@@ -1,0 +1,165 @@
+# Site
+repository: dongsubkim/resume 
+favicon: images/favicon.ico
+
+# Content configuration version
+version: 2
+
+# Personal info
+name: 김동섭
+title: 효율성을 추구하는 개발자
+email: dskim9218@gmail.com
+# website: github.com/dongsubkim/resume
+phone: 01036936883
+
+# Dark Mode (true/false/never)
+darkmode: false
+
+# Social links
+# twitter_username: facespics
+github_username: dongsubkim
+# stackoverflow_username: "00000001"
+# dribbble_username: jekyll
+# facebook_username: jekyll
+# flickr_username: jekyll
+# instagram_username: jameswgrant
+linkedin_username: dongsubkim
+# xing_username: jekyll
+# pinterest_username: jekyll
+# youtube_username: globalmtb
+# googleplus_username: +jekyll
+# orcid_username: 0000-0000-0000-0000
+
+# Additional icon links
+additional_links:
+# - title: itsgoingto.be
+#   icon: fas fa-globe
+#   url: https://www.itsgoingto.be
+# - title: another link
+#   icon: font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&m=free)
+#   url: Link url (eg. https://google.com)
+
+# Google Analytics and Tag Manager
+# Using more than one of these may cause issues with reporting
+# gtm: "GTM-0000000"
+# gtag: "UA-00000000-0"
+# google_analytics: "UA-00000000-0"
+
+# About Section
+# about_title: About Me
+about_profile_image: images/profile.jpg
+about_content: | # this will include new lines to allow paragraphs
+  어려운 비지니스 문제를 프로그래밍으로 해결하는 것을 좋아하는 3년차 웹 개발자입니다. 
+
+  주로 Kotlin과 Spring을 사용한 서버사이드 개발을 하고 반복적인 작업을 자동화하여 효율성을 높이는 것을 좋아합니다.  
+
+  테스트 코드의 중요성을 항상 생각하고 지속적인 유지보수가 가능한 코드를 생산하는 것에 집중합니다.
+content:
+  - title: Experience # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: left
+        title: Bucketplace (오늘의집)
+        # link: ohou.se 
+        # link_text: boringcompany.com
+        sub_title: Software Engineer
+        caption: September 2021 - Present
+        # quote: >
+        #   Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
+        description: | # this will include new lines to allow paragraphs
+          **오로라(파트너 센터) 계정 서비스**
+           - RubyOnRails 기반 레거시 시스템을 분석하여 새로운 파트너 계정 구조 디자인 및 Kotlin/Spring 기반 MSA 계정 서비스 개발
+           - 레거시 시스템에 대한 듀얼라이트 구현 및 21,336건의 데이터 마이그레이션으로 레거시 시스템을 바라보는 다른 서비스들의 무수정 연동 구축
+           - 기존의 Rails 세션 기반의 인증 시스템을 JWT와 Redis를 이용한 토큰 기반 인증 시스템으로 전환 및 이메일/SMS 2차 인증 서비스 구현
+           - Spring Cloud Gateway를 이용해 파트너 센터로 오는 요청에 대한 파트너 인증 여부 확인 후 다른 MSA 서비스로 전달 후 응답을 파싱하지 않고 바로 반환하는 필터 서비스 구현
+           - 오늘의집 직원이 파트너 센터에 파트너 계정으로 비밀번호 없이 접속이 가능하도록 JWT 인증 우회 기능([User Impersonate](https://medium.com/deskera-engineering/user-impersonation-f4939a82f38b)) 구현으로 파트너들이 문제가 생겼을 때 내부직원들이 접속해 문제 해결 기능 지원
+           - 파트너 센터 전체 시스템에 대한 오류 코드 일원화 및 예외 처리 공통화 제안으로 다른 서비스들과의 연동 오버헤드 최소화
+           - 파트너 계정 서비스 테스트 커버리지 76.3% 달성으로 서비스의 유지보수성 향상
+
+           **오늘의집 1P(자체 브랜드) 물류 서비스 센터 이원화 및 시스템 최적화**
+           - 상품-센터 매핑을 비롯해 주문 시점에 각 센터별 재고, 상품의 부피, 주소지등 센터별 복잡한 요구사항을 충족하는 최적 배송권역그룹 선정 알고리즘 및 주문 생성 로직 구현
+           - 주문 수정 요청 시 재고 로직 문제로 인한 장애를 재고 Lock 선점 방식으로 변경해 기존의 주당 2.83건의 요청 실패율에 대한 장애 제로화 진행 및 모니터링 추가
+           - 비지니스 요구사항으로 재고보다 많은 주문이 들어오는 과주문 형태를 해결하기 위해 과주문 발생에 대한 모니터링 추가 및 자동 알림 메세지 발송으로 CX 및 재고 관리 운영팀과의 커뮤니케이션 비용 절감
+           - 지속적인 코드 리팩토링(하드 코딩 제거, 수치 조정 UI 제공) 및 운영팀의 수기 업무 자동화로 지방 배송 상품 파손율 15% 감소, 지방 배송 리드타임 27% 단축 및 월 도급 비용 2000만원 비용 절감, 월 평균 166시간의 공수 단축 등의 회사 전체의 효율성 극대화
+           - 코드 퀄리티 및 유지보수성 향상을 위해 물류 서비스에 JaCoCo, detekt 및 ktlint 도입 후 814 건의 code smell 해결 및 테스트 코드 작성으로 테스트 커버리지 10%p 상승.
+           
+           **오늘의집 1P(자체 브랜드) 상품 발주 및 입고 시스템**
+           - 수기 운영으로 인해 정보 추적 및 정산 데이터 정합성 보장이 불가능하던 1P 발주/입고를 시스템화 하는 배송 상품 발주 및 입고 시스템(Supply Chain Management)을 MSA 서비스로 개발
+           - SCM 시스템의 발주 및 입고 시스템 데이터베이스 디자인 및 Kotlin/Spring 백엔드 개발과Typescript/React 기반 파트너용 프론드엔드 웹 서비스 개발
+           - 발주 내역 히스토리 저장을 위한 MongoDB 도입 후 Hibernate interceptor를 이용한 메인 데이터베이스 MySQL과의 다중 데이터베이스 트랜잭션 구현
+           
+      - layout: left
+        title: Naver Corporation
+        sub_title: Software Engineer Intern
+        caption: October 2020 - January 2021
+        description: | # this will include new lines to allow paragraphs
+          - 모델 훈련에 필요한 50,000 곡의 노래 및 가사를 Pandas로 정제하고 수정
+          - pyTorch를 사용해 다중 GPU를 사용해서 노래의 가사를 음절 단위로 싱크하는 신경망 모델 구현 및 훈련 진행
+          - 로그를 사용하여 내부적으로 서비스를 분석하는 데 사용하는 Python/Django 기반 대시보드 유지보수 및 기능 추가
+
+      - layout: left
+        title: Basilica
+        sub_title: Machine Learning Engineer
+        caption: November 2019 - April 2020
+        description: | # this will include new lines to allow paragraphs
+          - 텍스트 및 이미지 분류를 위한 머신 러닝 모델 설계 및 훈련
+          - neural network embeddings을 생성하는 데 사용된 데이터 수집, 정제 및 시각화
+          - 브라우저 확장 프로그램을 위해 사용자 정의 API 설계
+          
+  - title: Projects # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: top-middle
+        title: Super awesome project
+        link: github.com/sproogen
+        # link_text: Project Website
+        additional_links:
+          - title:  sproogen/modern-resume-theme
+            icon: fab fa-github
+            url: github.com/sproogen/modern-resume-theme
+          # - title:  Github page for project (eg. sproogen/modern-resume-theme)
+          #   icon: fab fa-github
+          #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
+        quote: >
+          This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
+        description: | # this will include new lines to allow paragraphs
+          I started this project as a way if learning <mark>React</mark> and it has since grown into a fully fledged app. I have learned many skills through this and been I'm very proud of having this in my portfolio. If you don't have a project as awesome as this I would advise you make one.
+  
+  - title: Education # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: left
+        title: Harvard University
+        caption: 2010 - 2013
+        sub_title: BSc Computer Science
+        quote: >
+          Established in 1636, Harvard is the oldest higher education institution in the United States, and is widely regarded in terms of its influence, reputation, and academic pedigree as a leading university in not just the US but also the world.
+        description: | # this will include new lines to allow paragraphs
+          During my time at Harvard I learnt most of my key skills that have I have taken through my career such as teamwork and working to tight deadlines. I thouroughly enjoyed my time as university and learnt a lot about a healthy work life balance.
+
+          I spent a lot of my free time as a committee member of the *Harvard Mountaineering Club* taking on roles such as *Trip Secretary* and *Vice-President*.
+
+  - title: A Little More About Me
+    layout: text
+    content: | # this will include new lines to allow paragraphs
+      Alongside my interests in networks and software engineering some of my other interests and hobbies are:
+      - Rock climbing
+      - Gaming
+      - Knitting
+      - [Becoming a ninja](https://www.youtube.com/watch?v=vtg4o__aRMg)
+
+      Look at this cool image  
+
+# Footer
+footer_show_references: true
+# references_title: References on request (Override references text)
+
+# Build settings
+remote_theme: sproogen/resume-theme
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+ - jekyll-seo-tag
