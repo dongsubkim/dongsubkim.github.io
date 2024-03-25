@@ -7,7 +7,7 @@ version: 2
 
 # Personal info
 name: 김동섭
-title: 효율성을 추구하는 개발자
+title: Software Engineer with Efficiency
 email: dskim9218@gmail.com
 # website: github.com/dongsubkim/resume
 phone: 01036936883
@@ -106,52 +106,81 @@ content:
           - neural network embeddings을 생성하는 데 사용된 데이터 수집, 정제 및 시각화
           - 브라우저 확장 프로그램을 위해 사용자 정의 API 설계
           
-  - title: Projects # Title for the section
+  - title: Toy Projects # Title for the section
     layout: list # Type of content section (list/text)
     content:
-      - layout: top-middle
-        title: Super awesome project
-        link: github.com/sproogen
-        # link_text: Project Website
+      - layout: left
+        title: Lunchbox
+        link: https://speckle-neem-ab4.notion.site/Lunchbox-0a9b3ee2b87c42b8b47dba18dbcf7116
+        link_text: Notion Link
         additional_links:
-          - title:  sproogen/modern-resume-theme
+          - title: APP_repo
             icon: fab fa-github
-            url: github.com/sproogen/modern-resume-theme
-          # - title:  Github page for project (eg. sproogen/modern-resume-theme)
-          #   icon: fab fa-github
-          #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
-        quote: >
-          This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
+            url: https://github.com/SideProjectByDJH/lunchbox_app
+          - title: API_repo
+            icon: fab fa-github
+            url: https://github.com/SideProjectByDJH/lunchbox_api
+        # quote: >
+        #   This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
         description: | # this will include new lines to allow paragraphs
-          I started this project as a way if learning <mark>React</mark> and it has since grown into a fully fledged app. I have learned many skills through this and been I'm very proud of having this in my portfolio. If you don't have a project as awesome as this I would advise you make one.
-  
+          - 매일 매일 도시락을 싸서 다니는 사람들을 위한 도시락 사진 공유 앱
+          - 2024년 5월 배포 예정
+          - Java, Spring, React Native
+      - layout: left
+        title: Winecork
+        link: https://speckle-neem-ab4.notion.site/Winecork-2a1cb06960cf44649feb06b9076a3ba1
+        link_text: Notion Link
+        additional_links:
+          - title: repo
+            icon: fab fa-github
+            url: https://github.com/dongsubkim/winecork
+        # quote: >
+        #   This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
+        description: | # this will include new lines to allow paragraphs
+          - 질문에 대한 답을 통해 근처 로컬 매장에서 픽업 가능한 와인을 추천해 주는 웹사이트
+          - 스타트업을 시작하고 싶어하는 친형이 부탁해 디자인을 받아 제작
+          - Go, PostgreSQL, AWS Beanstalk, Javascript, Heroku
+          
+      - layout: left
+        title: dskim.blog
+        link: https://speckle-neem-ab4.notion.site/Winecork-2a1cb06960cf44649feb06b9076a3ba1
+        link_text: Notion Link
+        additional_links:
+          - title: repo
+            icon: fab fa-github
+            url: https://github.com/dongsubkim/myblogv2
+          - title: repo
+            icon: fab fa-github
+            url: https://github.com/dongsubkim/myblog
+        # quote: >
+        #   This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
+        description: | # this will include new lines to allow paragraphs
+          - 개인 블로그 
+          - 웹 개발에 대한 경험을 쌓기 위해 여러 스택으로 클론해가며 제작
+          - Node.js, Express, MongoDB, Go, PostgreSQL, javascript, Heroku
+          
   - title: Education # Title for the section
     layout: list # Type of content section (list/text)
     content:
       - layout: left
-        title: Harvard University
-        caption: 2010 - 2013
-        sub_title: BSc Computer Science
-        quote: >
-          Established in 1636, Harvard is the oldest higher education institution in the United States, and is widely regarded in terms of its influence, reputation, and academic pedigree as a leading university in not just the US but also the world.
+        title: University of California, Berkeley
+        caption: 2012 - 2019
+        # sub_title: Bachelor's Degree in Computer Science & Applied Mathematics
         description: | # this will include new lines to allow paragraphs
-          During my time at Harvard I learnt most of my key skills that have I have taken through my career such as teamwork and working to tight deadlines. I thouroughly enjoyed my time as university and learnt a lot about a healthy work life balance.
+          Bachelor's Degree in Computer Science & Applied Mathematics
+          
+          GPA: 3.80 / 4.00, Major GPA: 3.88 / 4.00
 
-          I spent a lot of my free time as a committee member of the *Harvard Mountaineering Club* taking on roles such as *Trip Secretary* and *Vice-President*.
-
-  - title: A Little More About Me
+  - title: Skills
     layout: text
     content: | # this will include new lines to allow paragraphs
-      Alongside my interests in networks and software engineering some of my other interests and hobbies are:
-      - Rock climbing
-      - Gaming
-      - Knitting
-      - [Becoming a ninja](https://www.youtube.com/watch?v=vtg4o__aRMg)
-
-      Look at this cool image  
+      - Backend: Kotlin, Spring(Boot, JPA, Batch), Java, Python
+      - Frontend: Typescript, React
+      - Database: MySQL, Redis, MongoDB 
+      - Comm. Protocol: REST API, Kafka
 
 # Footer
-footer_show_references: true
+footer_show_references: false
 # references_title: References on request (Override references text)
 
 # Build settings
