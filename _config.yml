@@ -70,7 +70,7 @@ content:
         description: | # this will include new lines to allow paragraphs
           **오로라(파트너 센터) 계정 서비스**
           - RubyOnRails 기반 레거시 시스템을 Kotlin/Spring 기반 MSA 파트너 계정 서비스로 전환 및 레거시 시스템에 대한 듀얼라이트 구현
-          - 기존의 Rails 세션 기반의 인증 시스템을 JWT와 Redis를 이용한 토큰 기반 인증 시스템으로 전환 및 이메일/SMS 2차 인증 서비스 구현
+          - 기존의 Rails 세션 기반의 인증 시스템을 JWT와 Redis를 이용한 토큰 기반 인증 시스템으로 전환 및 이메일/SMS 2차 인증 서비스 구현([노션 포스트](https://speckle-neem-ab4.notion.site/SMS-Email-2-0fa9323fdf444e5cbacb325664085209?pvs=4))
           - Spring Cloud Gateway를 이용해 파트너 센터로 오는 요청에 대한 파트너 인증 여부 확인 후 다른 MSA 서비스로 전달 후 응답을 파싱하지 않고 바로 반환하는 필터 서비스 구현
           - 오늘의집 직원이 파트너 센터에 파트너 계정으로 비밀번호 없이 접속이 가능하도록 JWT 인증 우회 기능([User Impersonate](https://medium.com/deskera-engineering/user-impersonation-f4939a82f38b)) 구현으로 파트너들이 문제가 생겼을 때 내부직원들이 접속해 문제 해결 기능 지원
           - 파트너 센터 전체 시스템에 대한 오류 코드 일원화 및 예외 처리 공통화 제안으로 다른 서비스들과의 연동 오버헤드 최소화
