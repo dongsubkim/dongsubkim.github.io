@@ -86,7 +86,7 @@ content:
           **오늘의집 1P(자체 브랜드) 상품 발주 및 입고 시스템**
           - 수기 운영으로 인해 정보 추적 및 정산 데이터 정합성 보장이 불가능하던 1P 발주/입고를 시스템화 하는 배송 상품 발주 및 입고 시스템(Supply Chain Management)을 MSA 서비스로 개발 후 런칭
           - SCM 시스템의 발주 및 입고 시스템 데이터베이스 디자인 및 Kotlin/Spring 기반 백엔드 개발과 Typescript/React 기반 파트너용 프론드엔드 웹 서비스 개발
-          - 발주 내역 히스토리 저장을 위한 MongoDB 도입 후 Hibernate interceptor를 이용한 메인 데이터베이스 MySQL과의 다중 데이터베이스 트랜잭션 구현
+          - 발주 내역 히스토리 저장을 위한 MongoDB 도입 후 Hibernate interceptor를 이용한 메인 데이터베이스 MySQL과의 다중 데이터베이스 트랜잭션 구현 ([노션 포스트](https://speckle-neem-ab4.notion.site/MySQL-MongoDB-a53d3a06551d47d78cb8536a27888e8f?pvs=4))
            
       - layout: left
         title: Naver Corporation
