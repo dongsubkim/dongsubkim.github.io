@@ -13,17 +13,17 @@ email: dskim9218@gmail.com
 phone: 01036936883
 
 # Dark Mode (true/false/never)
-darkmode: never
+darkmode: false
 
 # Social links
 # twitter_username: facespics
-# github_username: dongsubkim
+github_username: dongsubkim
+linkedin_username: dong-sub-kim-699956138
 # stackoverflow_username: "00000001"
 # dribbble_username: jekyll
 # facebook_username: jekyll
 # flickr_username: jekyll
 # instagram_username: jameswgrant
-# linkedin_username: dong-sub-kim-699956138
 # xing_username: jekyll
 # pinterest_username: jekyll
 # youtube_username: globalmtb
@@ -32,9 +32,9 @@ darkmode: never
 
 # Additional icon links
 additional_links:
-# - title: itsgoingto.be
-#   icon: fas fa-globe
-#   url: https://dongsubkim.github.io
+- title: itsgoingto.be
+  icon: fas fa-globe
+  url: https://dongsubkim.github.io
 # - title: another link
 #   icon: font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&m=free)
 #   url: Link url (eg. https://google.com)
