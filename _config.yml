@@ -9,21 +9,21 @@ version: 2
 name: 김동섭
 title: Software Engineer with Efficiency
 email: dskim9218@gmail.com
-# website: github.com/dongsubkim/resume
+# website: https://dongsubkim.github.io
 phone: 01036936883
 
 # Dark Mode (true/false/never)
-darkmode: false
+darkmode: never
 
 # Social links
 # twitter_username: facespics
-github_username: dongsubkim
+# github_username: dongsubkim
 # stackoverflow_username: "00000001"
 # dribbble_username: jekyll
 # facebook_username: jekyll
 # flickr_username: jekyll
 # instagram_username: jameswgrant
-linkedin_username: dong-sub-kim-699956138
+# linkedin_username: dong-sub-kim-699956138
 # xing_username: jekyll
 # pinterest_username: jekyll
 # youtube_username: globalmtb
@@ -34,7 +34,7 @@ linkedin_username: dong-sub-kim-699956138
 additional_links:
 # - title: itsgoingto.be
 #   icon: fas fa-globe
-#   url: https://www.itsgoingto.be
+#   url: https://dongsubkim.github.io
 # - title: another link
 #   icon: font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&m=free)
 #   url: Link url (eg. https://google.com)
@@ -59,7 +59,7 @@ content:
   - title: Experience # Title for the section
     layout: list # Type of content section (list/text)
     content:
-      - layout: left
+      - layout: top
         title: Bucketplace (오늘의집)
         # link: ohou.se 
         # link_text: boringcompany.com
@@ -88,7 +88,7 @@ content:
           - SCM 시스템의 발주 및 입고 시스템 데이터베이스 디자인 및 Kotlin/Spring 기반 백엔드 개발과 Typescript/React 기반 파트너용 프론드엔드 웹 서비스 개발
           - 발주 내역 히스토리 저장을 위한 MongoDB 도입 후 Hibernate interceptor를 이용한 메인 데이터베이스 MySQL과의 다중 데이터베이스 트랜잭션 구현 ([노션 포스트](https://speckle-neem-ab4.notion.site/MySQL-MongoDB-a53d3a06551d47d78cb8536a27888e8f?pvs=4))
            
-      - layout: left
+      - layout: top
         title: Naver Corporation
         sub_title: Software Engineer Intern
         caption: October 2020 - January 2021
@@ -97,7 +97,7 @@ content:
           - pyTorch를 사용해 다중 GPU를 사용해서 노래의 가사를 음절 단위로 싱크하는 신경망 모델 구현 및 훈련 진행
           - 로그를 사용하여 내부적으로 서비스를 분석하는 데 사용하는 Python/Django 기반 대시보드 유지보수 및 기능 추가
 
-      - layout: left
+      - layout: top
         title: Basilica
         sub_title: Machine Learning Engineer
         caption: November 2019 - April 2020
@@ -109,21 +109,21 @@ content:
   - title: Toy Projects # Title for the section
     layout: list # Type of content section (list/text)
     content:
-      - layout: left
+      - layout: top
         title: Lunchbox
         description: | # this will include new lines to allow paragraphs
           - 매일 매일 도시락을 싸서 다니는 사람들을 위한 도시락 사진 공유 앱 (2024년 5월 배포 예정)
           - 앱 개발에 대한 모든 과정에 대해 공부하고 싶어 시작한 사이드 프로젝트 ([노션 포스트](https://speckle-neem-ab4.notion.site/Lunchbox-0a9b3ee2b87c42b8b47dba18dbcf7116))
           - Java, Spring, React Native
 
-      - layout: left
+      - layout: top
         title: Winecork
         description: | # this will include new lines to allow paragraphs
           - 질문에 대한 답을 통해 근처 로컬 매장에서 픽업 가능한 와인을 추천해 주는 웹사이트 (2021년 6월 ~ 서비스 중단)
           - 스타트업을 시작하고 싶어하는 친형이 부탁해 디자인을 받아 제작 ([노션 포스트](https://speckle-neem-ab4.notion.site/Winecork-2a1cb06960cf44649feb06b9076a3ba1))
           - Go, PostgreSQL, AWS Beanstalk, Javascript, AWS Elastic Beanstalk
           
-      - layout: left
+      - layout: top
         title: dskim.blog
         description: | # this will include new lines to allow paragraphs
           - 개인 블로그 (2021년 4월 ~ 서비스 중단)
@@ -133,7 +133,7 @@ content:
   - title: Education # Title for the section
     layout: list # Type of content section (list/text)
     content:
-      - layout: left
+      - layout: top
         title: University of California, Berkeley
         caption: 2012 - 2019
         # sub_title: Bachelor's Degree in Computer Science & Applied Mathematics
