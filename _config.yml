@@ -64,6 +64,7 @@ content:
         sub_title: Software Engineer
         caption: September 2021 - Present
         description: | # this will include new lines to allow paragraphs
+
           **물류 서비스 발주/입고 서비스 개발 및 기존 주문 시스템 고도화**
           - 수기 운영되던 물류 서비스 발주/입고 시스템(SCM)을 Kotlin/Spring 기반 MSA 서비스로 개발 및 런칭하여 정보 추적 및 정산 데이터 정합성 확보
           - MongoDB를 기존 시스템에 도입 및 Hibernate interceptor 활용한 MySQL과의 다중 DB 트랜잭션 구현([노션 포스트](https://speckle-neem-ab4.notion.site/MySQL-MongoDB-a53d3a06551d47d78cb8536a27888e8f?pvs=4))
@@ -92,6 +93,7 @@ content:
         sub_title: Software Engineer Intern
         caption: October 2020 - January 2021
         description: | # this will include new lines to allow paragraphs
+
           - 모델 훈련용 50,000 곡 노래/가사 Pandas 정제 및 수정.
           - pyTorch 활용 다중 GPU 기반 노래 가사 음절 단위 싱크 신경망 모델 구현 및 훈련.
           - Python/Django 기반 내부 서비스 분석 대시보드 유지보수 및 기능 추가.
@@ -101,6 +103,7 @@ content:
         sub_title: Machine Learning Engineer
         caption: November 2019 - April 2020
         description: | # this will include new lines to allow paragraphs
+        
           - 텍스트 및 이미지 분류 머신 러닝 모델 설계 및 훈련.
           - Neural network embeddings 생성 위한 데이터 수집, 정제 및 시각화.
           - 브라우저 확장 프로그램 위한 사용자 정의 API 설계.
