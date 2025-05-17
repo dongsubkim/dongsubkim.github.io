@@ -63,38 +63,30 @@ content:
         title: Bucketplace (오늘의집)
         sub_title: Software Engineer
         caption: September 2021 - Present
-        quote: >
-          인테리어 플랫폼으로 물류 서비스 및 커머스 파트너 서비스 개발
         description: | # this will include new lines to allow paragraphs
-          **물류 서비스 SCM 시스템 리뉴얼 및 SAP 연동 개발 주도**
-          - 신규 외부 솔루션(물류대장) 및 SAP 연동을 위한 SCM 시스템(발주/입고 관리) 전면 리디자인 및 개발 주도.
-          - PO 부재 상황에서 운영팀과 직접 소통하여 요구사항 정의, 시스템 구조 재설계 및 개발 우선순위 도출.
-          - 기존 아키텍처 단점을 보완한 새로운 시스템 구조 설계 및 적용.
-          - 어드민 및 공급사향 주요 기능(발주 생성/수정/조회/삭제, 입고 슬롯 관리, 입고 승인 등) 구현 및 높은 테스트 커버리지 확보(87.64% ~ 95.94%)로 유지보수성 향상.
-          - 외부 시스템(WMS, SAP)과의 데이터 연동 인터페이스 정의 및 시스템 반영.
-          - Spring Boot 2/JDK 11 기반 시스템을 Spring Boot 3.3.0/JDK 21로 업그레이드하며 기술적 이슈 해결 및 여러 개의 SCM 관련 레포지토리 병합 및 팀 내 신규 백엔드 아키텍처 도입에 따른 코드 마이그레이션. 
+          **물류 서비스 발주/입고 서비스 개발 및 기존 주문 시스템 고도화**
+          - 수기 운영되던 물류 서비스 발주/입고 시스템(SCM)을 Kotlin/Spring 기반 MSA 서비스로 개발 및 런칭하여 정보 추적 및 정산 데이터 정합성 확보
+          - MongoDB를 기존 시스템에 도입 및 Hibernate interceptor 활용한 MySQL과의 다중 DB 트랜잭션 구현([노션 포스트](https://speckle-neem-ab4.notion.site/MySQL-MongoDB-a53d3a06551d47d78cb8536a27888e8f?pvs=4))
+          - 기존에 단일 센터 기반의 물류 시스템을 다중 센터를 지원할 수 있도록 신규 발주/입고 및 주문 생성 로직 구현 
+          - 지방 직배송 기능 개발로 지방 배송 상품 파손율 15% 감소, 리드타임 27% 단축 및 MSA 시스템 간의 배송 캐파 연동 기능 개발로 월 도급 비용 2000만원 절감, 월 평균 166시간 공수 단축
+          - 팀 내 정적 분석 툴(detekt), linter(ktlint) 및 JaCoCo 도입으로 코드 퀄리티 및 유지보수성 향상 (814건 code smell 해결, 테스트 커버리지 10%p 상승)
 
-          **오로라(파트너 센터) 계정 서비스 개발 및 개선**
-          - RubyOnRails 기반 레거시 시스템을 Kotlin/Spring 기반 MSA 파트너 계정 서비스로 전환 및 레거시 시스템에 대한 듀얼라이트 구현
-          - Rails 세션 기반 인증 시스템을 JWT/Redis 기반 토큰 인증 시스템으로 전환 및 이메일/SMS 2차 인증 서비스 구현([노션 포스트](https://speckle-neem-ab4.notion.site/SMS-Email-2-0fa9323fdf444e5cbacb325664085209?pvs=4))
-          - Spring Cloud Gateway 활용 파트너 인증 필터 서비스 구현.
-          - 내부 직원의 파트너 계정 접근 위한 JWT 인증 우회 기능([User Impersonate](https://medium.com/deskera-engineering/user-impersonation-f4939a82f38b)) 구현.
-          - 파트너 센터 시스템 오류 코드 일원화 및 예외 처리 공통화 제안.
-          - 파트너 계정 서비스 테스트 커버리지 76.3% 달성으로 유지보수성 향상.
-          - Partner-Auth 관련 장애 발생 시 신속 탐지 및 공유, 문제 해결 기여.
+          **물류 서비스 리뉴얼 및 SAP 연동 개발**
+          - SAP 및 신규 외부 솔루션(물류대장) 연동을 위한 기존의 발주/입고 관리 시스템(SCM) 리뉴얼 후 기존 데이터 마이그레이션
+          - PO 부재 상황에서 운영팀과 직접 소통하여 요구사항 정의, 시스템 구조 재설계 및 개발 우선순위 도출
+          - 기존 백엔드 아키텍처의 단점인 불필요한 코드 중복을 방지하기 위한 새로운 백엔드 아키텍처 설계 및 모노레포로 기존 레포지토리 통합
+          - 신규 시스템의 높은 테스트 커버리지 확보(87.64% ~ 95.94%)로 유지보수성 향상
+          - Spring Boot 2/JDK 11 기반 시스템을 Spring Boot 3/JDK 21로 업그레이드하여 사내 인프라 지원이 불가능했던 이슈 해결
+          
+          **오로라(파트너 센터) 계정 서비스 개발**
+          - RubyOnRails 기반 레거시 Monolithic 시스템에 있는 파트너 계정 서비스를 대체하는 새로운 Kotlin/Spring 기반 MSA 파트너 계정 서비스 개발
+          - 기존 레거시 시스템에 있는 3만여 계정에 대한 신규 가입자마이그레이션 및 에 대한 레거시 시스템 듀얼라이트 구현
+          - Rails 세션 기반 인증 시스템을 JWT/Redis 기반 토큰 인증 시스템으로 전환 및 이메일/SMS 2차 인증 서비스 구현([노션 포스트](https://speckle-neem-ab4.notion.site/SMS-Email-2-0fa9323fdf444e5cbacb325664085209?pvs=4))으로 보안성 상승
+          - Spring Cloud Gateway 활용 파트너 인증 필터 서비스 구현 및 사내 다른 MSA 서비스에 연동
+          - OTP를 활용한 내부 직원의 파트너 계정 임시 접근을 위한 JWT 인증 우회 기능(User Impersonate) 구현
+          - 팀 내 모든 시스템 오류 코드 일원화 및 예외 처리 공통화 적용
+          - 파트너 계정 서비스 테스트 커버리지 76.3% 달성으로 유지보수성 향상
 
-          **오늘의집 1P 물류 서비스 센터 이원화 및 시스템 최적화**
-          - 상품-센터 매핑, 재고, 부피, 주소지 등 고려한 최적 배송권역그룹 선정 알고리즘 및 주문 생성 로직 구현.
-          - 과주문 발생 모니터링 및 자동 알림 메시지 발송 시스템 구축으로 CX/재고 관리 운영팀 커뮤니케이션 비용 절감.
-          - 주문 수정 요청 시 재고 로직 버그 해결로 주당 2.83건 요청 실패 건 장애 제로화.
-          - 코드 리팩토링 및 운영팀 수기 업무 자동화를 통해 지방 배송 상품 파손율 15% 감소, 리드타임 27% 단축, 월 도급 비용 2000만원 절감, 월 평균 166시간 공수 단축 등 효율성 극대화.
-          - JaCoCo, detekt, ktlint 도입 및 테스트 코드 작성을 통해 코드 퀄리티 및 유지보수성 향상 (814건 code smell 해결, 테스트 커버리지 10%p 상승). 
-
-          **오늘의집 1P 상품 발주 및 입고 시스템(SCM) 개발**
-          - 수기 운영되던 1P 발주/입고 시스템을 MSA 서비스로 개발 및 런칭하여 정보 추적 및 정산 데이터 정합성 확보.
-          - SCM 시스템 DB 디자인 및 Kotlin/Spring 기반 백엔드 개발, Typescript/React 기반 파트너용 프론트엔드 웹 서비스 개발.
-          - MongoDB 도입 및 Hibernate interceptor 활용 MySQL과의 다중 DB 트랜잭션 구현.([노션 포스트](https://speckle-neem-ab4.notion.site/MySQL-MongoDB-a53d3a06551d47d78cb8536a27888e8f?pvs=4))
-           
       - layout: top
         title: Naver Corporation
         sub_title: Software Engineer Intern
@@ -117,19 +109,14 @@ content:
     layout: list # Type of content section (list/text)
     content:
       - layout: top
-        title: Lunchbox
-        description: | # this will include new lines to allow paragraphs
-          - 도시락 사진 공유 앱 (Java, Spring, React Native). 앱 개발 전 과정 학습 목적 사이드 프로젝트. (배포 미정)
-
-      - layout: top
         title: Winecork
         description: | # this will include new lines to allow paragraphs
-          - 와인 추천 웹사이트 (Go, PostgreSQL, AWS Beanstalk, Javascript)
+          - 와인 추천 웹사이트 (Go, PostgreSQL, AWS Beanstalk, Javascript) [노션 포스트](https://www.notion.so/Winecork-2a1cb06960cf44649feb06b9076a3ba1?pvs=4)
           
       - layout: top
         title: dskim.blog
         description: | # this will include new lines to allow paragraphs
-          - 개인 블로그 (Node.js, Express, MongoDB, Go, PostgreSQL, javascript, Heroku)
+          - 개인 블로그 (Node.js, Express, MongoDB, Go, PostgreSQL, javascript, Heroku) [노션 포스트](https://www.notion.so/dskim-blog-179170ed17e44113b0df31d852117c63?pvs=4)
           
   - title: Education # Title for the section
     layout: list # Type of content section (list/text)
