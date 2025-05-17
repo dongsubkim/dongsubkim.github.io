@@ -83,10 +83,9 @@ content:
           - RubyOnRails 기반 레거시 Monolithic 시스템에 있는 파트너 계정 서비스를 대체하는 새로운 Kotlin/Spring 기반 MSA 파트너 계정 서비스 개발
           - 기존 레거시 시스템에 있는 4만여 계정에 대한 신규 계정 서비스로의 마이그레이션 및 신규 가입자에 대한 레거시 시스템 듀얼라이트 구현
           - Rails 세션 기반 인증 시스템을 JWT/Redis 기반 토큰 인증 시스템으로 전환 및 이메일/SMS 2차 인증 서비스 구현([노션 포스트](https://speckle-neem-ab4.notion.site/SMS-Email-2-0fa9323fdf444e5cbacb325664085209?pvs=4))으로 보안성 상승
-          - Spring Cloud Gateway 활용 파트너 인증 필터 서비스 구현 및 사내 다른 MSA 서비스에 연동
           - OTP를 활용한 내부 직원의 파트너 계정 임시 접근을 위한 JWT 인증 우회 기능(User Impersonate) 구현
-          - 팀 내 모든 시스템 오류 코드 일원화 및 예외 처리 공통화 적용
-          - 파트너 계정 서비스 테스트 커버리지 76.3% 달성으로 유지보수성 향상
+          - Spring Cloud Gateway 활용해 파트너 인증 필터 서비스 구현 및 사내 다른 MSA 서비스에 연동
+          - 팀 내 모든 시스템 오류 코드 일원화 및 예외 처리 공통화 적용 및 계정 서비스 테스트 커버리지 76.3% 달성으로 유지보수성 향상
 
       - layout: top
         title: Naver Corporation
