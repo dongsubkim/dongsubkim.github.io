@@ -111,7 +111,7 @@ content:
       - layout: top
         title: Winecork
         description: | # this will include new lines to allow paragraphs
-          - 질문에 대한 답을 통해 근처 로컬 매장에서 픽업 가능한 와인을 추천해 주는 웹사이트([노션 포스트])(https://www.notion.so/Winecork-2a1cb06960cf44649feb06b9076a3ba1?pvs=4)
+          - 질문에 대한 답을 통해 근처 로컬 매장에서 픽업 가능한 와인을 추천해 주는 웹사이트([노션 포스트](https://www.notion.so/Winecork-2a1cb06960cf44649feb06b9076a3ba1?pvs=4))
           - Go, PostgreSQL, AWS Beanstalk, Javascript
           
       - layout: top
