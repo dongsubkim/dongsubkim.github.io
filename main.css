@@ -624,7 +624,8 @@ ul.icons a {
     flex-direction: column;
     text-align: left;
     justify-content: center;
-    vertical-align: middle
+    vertical-align: middle;
+    margin-bottom: 3px;
 }
 
 .layout .details p {
