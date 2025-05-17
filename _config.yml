@@ -111,12 +111,14 @@ content:
       - layout: top
         title: Winecork
         description: | # this will include new lines to allow paragraphs
-          - 와인 추천 웹사이트 (Go, PostgreSQL, AWS Beanstalk, Javascript) [노션 포스트](https://www.notion.so/Winecork-2a1cb06960cf44649feb06b9076a3ba1?pvs=4)
+          - 질문에 대한 답을 통해 근처 로컬 매장에서 픽업 가능한 와인을 추천해 주는 웹사이트([노션 포스트])(https://www.notion.so/Winecork-2a1cb06960cf44649feb06b9076a3ba1?pvs=4)
+          - Go, PostgreSQL, AWS Beanstalk, Javascript
           
       - layout: top
         title: dskim.blog
         description: | # this will include new lines to allow paragraphs
-          - 개인 블로그 (Node.js, Express, MongoDB, Go, PostgreSQL, javascript, Heroku) [노션 포스트](https://www.notion.so/dskim-blog-179170ed17e44113b0df31d852117c63?pvs=4)
+          - 개인 기록용 블로그([노션 포스트](https://www.notion.so/dskim-blog-179170ed17e44113b0df31d852117c63?pvs=4))
+          - Node.js, Express, MongoDB, Go, PostgreSQL, javascript, Heroku
           
   - title: Education # Title for the section
     layout: list # Type of content section (list/text)
