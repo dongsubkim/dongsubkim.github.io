@@ -49,7 +49,7 @@ additional_links:
 # about_title: About Me
 about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
-  어려운 비지니스 문제를 프로그래밍으로 해결하는 것을 좋아하는 4년차 서버 개발자입니다. 물류 도메인에서 SCM, OMS 등 도메인 특화 시스템 개발 및 런칭 경험과 파트너 도메인에서 인증 시스템 포함 계정 관리 서비스 개발 경험이 있습니다.
+  어려운 비지니스 문제를 프로그래밍으로 해결하는 것을 좋아하는 4년차 서버 개발자입니다. 물류 서비스의 발주/입고(SCM), 주문(OMS) 도메인 서비스 및 2FA 인증 시스템을 사용하는 계정 관리 서비스 개발 경험이 있습니다.
   
   Kotlin/Spring 기반 서버 개발에 특화되어 있으며, 반복 작업 자동화 및 코드 리팩토링으로 효율성을 높이는 것을 선호합니다. 개발 전 문서화를 통해 전체 그림을 그리고 팀원들과의 리뷰를 통해 서비스 품질 및 유지보수 효율성을 높이기 위해 노력합니다. 
   
@@ -61,12 +61,10 @@ content:
     content:
       - layout: top
         title: Bucketplace (오늘의집)
-        # link: ohou.se 
-        # link_text: boringcompany.com
         sub_title: Software Engineer
         caption: September 2021 - Present
-        # quote: >
-        #   Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
+        quote: >
+          인테리어 플랫폼으로 물류 서비스 및 커머스 파트너 서비스 개발
         description: | # this will include new lines to allow paragraphs
           **물류 서비스 SCM 시스템 리뉴얼 및 SAP 연동 개발 주도**
           - 신규 외부 솔루션(물류대장) 및 SAP 연동을 위한 SCM 시스템(발주/입고 관리) 전면 리디자인 및 개발 주도.
@@ -126,12 +124,12 @@ content:
       - layout: top
         title: Winecork
         description: | # this will include new lines to allow paragraphs
-          - 와인 추천 웹사이트 (Go, PostgreSQL, AWS Beanstalk, Javascript). 스타트업 시작 형제 요청 제작 (2021년 6월 ~ 서비스 중단).
+          - 와인 추천 웹사이트 (Go, PostgreSQL, AWS Beanstalk, Javascript)
           
       - layout: top
         title: dskim.blog
         description: | # this will include new lines to allow paragraphs
-          - 개인 블로그 (Node.js, Express, MongoDB, Go, PostgreSQL, javascript, Heroku). 웹 개발 경험 축적 목적 (2021년 4월 ~ 서비스 중단).
+          - 개인 블로그 (Node.js, Express, MongoDB, Go, PostgreSQL, javascript, Heroku)
           
   - title: Education # Title for the section
     layout: list # Type of content section (list/text)
