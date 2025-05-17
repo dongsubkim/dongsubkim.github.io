@@ -4,6 +4,10 @@
 
 @import 'modern-resume-theme';
 
+body {
+    word-break: keep-all;
+}
+
 .layout .details {
     justify-content: flex-start;
     margin-bottom: 1rem;
@@ -11,4 +15,35 @@
 
 h3 {
     border-bottom-style: solid;
+}
+
+@media print {
+    p {
+        font-size: 1.3rem;
+    }
+    li {
+        font-size: 1.3rem;
+    }
+
+    h3 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    h4 {
+        font-size: 2rem;
+    }
+
+    .layout {
+        margin-top: 1rem;
+    }
+
+    .page-content a {
+        color: #477dca !important;
+        print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;    
+    }
+
+    .footer-container {
+        display: none;
+    }
 }
