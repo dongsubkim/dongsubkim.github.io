@@ -6,7 +6,7 @@ favicon: images/favicon.ico
 version: 2
 
 # Personal info
-name: 김동섭
+name: Dong Sub (Dave) Kim
 title: Software Engineer with Efficiency
 email: dskim9218@gmail.com
 website: https://dongsubkim.github.io
@@ -48,12 +48,16 @@ additional_links:
 # About Section
 # about_title: About Me
 about_profile_image: images/profile.jpg
-about_content: | # this will include new lines to allow paragraphs
-  비즈니스 난제를 코드로 풀어내는 데 즐거움을 느끼는 4년 차 서버 개발자입니다. 물류 발주·입고(SCM)와 주문 처리(OMS) 시스템, 그리고 2FA 기반 계정 관리 서비스를 설계·구축한 경험이 있습니다.
-  
-  주력 기술은 Kotlin과 Spring이며, 반복 업무를 자동화하고 적극적인 리팩토링으로 개발 효율을 높입니다. 개발 전에 설계 문서를 작성해 팀과 큰 그림을 공유하고, 리뷰 과정을 통해 서비스 품질과 유지보수성을 꾸준히 개선합니다.
-  
-  테스트 코드를 중시하며, 평균 85% 이상의 커버리지를 유지해 코드 품질을 높였고 지금도 지속적으로 개선하고 있습니다. 또한 팀 코딩 컨벤션·개발 규칙 수립으로 코드 가독성과 유지보수성을 꾸준히 높이고 있습니다.
+about_content: | # this will include new lines to allow paragraphs  
+  I am a dedicated server developer with over 3 years of experience who enjoys solving complex business challenges through code. 
+  My expertise includes designing and implementing Supply Chain Management (SCM), Order Management Systems (OMS), and secure, 2FA-based account management solutions.
+
+  My primary technologies are Kotlin and Spring, and I enhance development efficiency by automating repetitive tasks and actively refactoring code. 
+  I always prepare clear, detailed technical designs to align closely with team practices, and continuously improve service quality and maintainability through routine code reviews.
+
+  I highly value unit testing, consistently maintaining test coverage above 85%, and continuously look for ways to further improve it. 
+  Additionally, I set team-wide coding conventions and development guidelines to enhance readability and maintainability.
+
 
 content:
   - title: Experiences # Title for the section
@@ -64,62 +68,62 @@ content:
         sub_title: Software Engineer
         caption: September 2021 - Present
         description: | # this will include new lines to allow paragraphs
-          **물류 시스템의 발주/입고 서비스 개발 및 기존 주문 시스템 고도화**
-          - 수기 운영되던 물류 서비스 발주/입고 시스템(SCM)을 Kotlin/Spring 기반 MSA 서비스로 개발 및 런칭하여 정보 추적 및 정산 데이터 정합성 확보
-          - MongoDB 도입 후 Hibernate interceptor 활용한 MySQL과의 다중 DB 트랜잭션 구현 ([노션 포스트](https://speckle-neem-ab4.notion.site/MySQL-MongoDB-a53d3a06551d47d78cb8536a27888e8f?pvs=4))
-          - 기존에 단일 센터 기반의 물류 시스템을 다중 센터를 지원할 수 있도록 신규 발주/입고 및 주문 생성 로직 구현 
-          - 지방 직배송 기능 개발로 지방 배송 상품 파손율 15% 감소, 배송 리드타임 27% 단축
-          - MSA 시스템 간의 배송 캐파 연동 기능 개발로 월 도급 비용 2000만원 절감, 월 평균 166시간 공수 단축
-          - 정적 분석 툴(detekt), linter(ktlint) 및 JaCoCo 도입으로 코드 퀄리티 및 유지보수성 향상 (814건 code smell 해결, 테스트 커버리지 10%p 상승)
+          **Development and Enhancement of Supply Chain Management(SCM) Systems**  
+          - Developed and deployed a Kotlin/Spring-based microservice architecture (MSA) for purchase-order/inbound management previously handled manually, significantly improving data accuracy and traceability.
+          - Successfully implemented multi-database transactions integrating MongoDB and MySQL through customized Hibernate interceptors. ([Post](https://speckle-neem-ab4.notion.site/MySQL-MongoDB-a53d3a06551d47d78cb8536a27888e8f?pvs=4))
+          - Transitioned from a legacy single-center logistics system to multi-center support, and redesigned ordering, inbound, and order creation processes.
+          - Implemented regional direct shipping features, reducing the regional product damage rate by 15% and shortening delivery lead time by 27%.
+          - Integrated shipping capacities across MSA systems, cutting monthly outsourcing costs by approximately 20 million KRW and saving an average of 166 monthly working hours.
+          - Improved service quality and maintainability by introducing static code analysis tools (Detekt), linters (ktlint), and test coverage tool JaCoCo. Resolved 814 "code-smells" and improved overall test coverage by 10 percentage points.
 
-          **물류 서비스 리뉴얼 및 SAP 연동 개발**
-          - SAP 및 외부 솔루션(물류대장) 연동을 위해 기존의 발주/입고 관리 시스템을 ERD부터 재설계해 신규 코드 베이스에 리뉴얼 후 17.6만 건의 데이터 마이그레이션
-          - PO 부재 상황에서 운영팀과 직접 소통하여 요구사항 정의, 시스템 구조 재설계 및 개발 우선순위 도출
-          - 재고 없이 주문을 받을 수 있는 백오더 시스템을 기획하고 기능 정의 후 개발
-          - 기존 백엔드 아키텍처의 단점인 불필요한 코드 중복을 방지하기 위한 새로운 백엔드 아키텍처 설계 및 모노레포 도입
-          - 신규 시스템의 높은 테스트 커버리지 확보(87.64% ~ 95.94%)로 유지보수성 향상
-          - 기존의 Spring Boot 2/JDK 11 기반 시스템을 Spring Boot 3/JDK 21로 업그레이드하여 사내 인프라 지원이 불가능했던 이슈 해결
+          **Logistics Service Renewal & SAP Integration**
+          - Fully redesigned data models for purchase-order/inbound management to support SAP and external system integration, resulting in migrating approximately 176,000 records onto a new codebase.
+          - Independently defined requirements and project development priorities through direct communication with operational teams in the absence of a Product Owner (PO).
+          - Designed and developed a backordering system that allows processing orders without pre-existing inventory, expanding customer purchasing flexibility.
+          - Introduced new backend architecture combined with a monorepo structure to eliminate redundant and duplicated code, vastly improving maintainability.
+          - Achieved exceptional test coverage (87.64% - 95.94%) to ensure high maintainability standards.
+          - Upgraded legacy system infrastructure from Spring Boot 2/JDK 11 to Spring Boot 3/JDK 21 to address internal infrastructure compatibility issues.
+
+          **O.rora (Partner Center) Account Service Development**
+          - Built a Kotlin/Spring-based MSA partner account management service, replacing existing monolithic legacy system written in Ruby-on-Rails.
+          - Successfully completed migration of approximately 40,000 legacy system accounts onto the new platform, and implemented dual-write logic for smooth service continuity.
+          - Improved security by transitioning from legacy session-based authentication to JWT & Redis-based authentication with email/SMS two-factor authentication. ([Post](https://speckle-neem-ab4.notion.site/SMS-Email-2-0fa9323fdf444e5cbacb325664085209?pvs=4))
+          - Implemented temporary internal staff access through a JWT user impersonation feature secured by OTP for enhanced operational workflows.
+          - Built partner authentication filters using Spring Cloud Gateway to facilitate seamless integration across internal microservices.
+          - Standardized error handling and API exception responses team-wide, improving readability and maintainability, achieving 76.3% test coverage within account services.
           
-          **오로라(파트너 센터) 계정 서비스 개발**
-          - RubyOnRails 기반 레거시 Monolithic 시스템에 있는 파트너 계정 서비스를 대체하는 새로운 Kotlin/Spring 기반 MSA 파트너 계정 서비스 개발
-          - 기존 레거시 시스템에 있는 4만여 계정에 대한 신규 계정 서비스로의 마이그레이션 및 신규 가입자에 대한 레거시 시스템 듀얼라이트 구현
-          - Rails 세션 기반 인증을 JWT + Redis 토큰 방식으로 전환하고 이메일/SMS 2차 인증을 개발 및 도입해 보안을 강화 ([노션 포스트](https://speckle-neem-ab4.notion.site/SMS-Email-2-0fa9323fdf444e5cbacb325664085209?pvs=4))
-          - OTP를 활용한 내부 직원의 파트너 계정 임시 접근을 위한 JWT 인증 우회 기능(User Impersonate) 구현
-          - Spring Cloud Gateway 활용해 파트너 인증 필터 서비스 구현 및 사내 다른 MSA 서비스에 연동
-          - 팀 내 모든 시스템 오류 코드 일원화 및 예외 처리 공통화 적용 및 계정 서비스 테스트 커버리지 76.3% 달성으로 유지보수성 향상
-
       - layout: top
         title: Naver Corporation
         sub_title: Software Engineer Intern
         caption: October 2020 - January 2021
         description: | # this will include new lines to allow paragraphs
-          - Pandas를 이용해 모델 훈련용으로 50,000 곡 분량의 노래/가사를 정제
-          - pyTorch를 활용해 다중 GPU 기반 신경망 모델 구현하고 훈련시켜 노래와 가사를 음절 단위로 서비스 구현
-          - Python/Django 기반 내부 서비스 분석 대시보드 유지보수 및 기능 추가
+          - Processed and refined song/lyric datasets (50,000 songs) for deep learning model training using Pandas
+          - Developed and trained multi-GPU neural network models using PyTorch for syllable-based song and lyrics sync generation service
+          - Maintained and augmented functionality of internal Python/Django-based analytical dashboards used within service environments
 
       - layout: top
         title: Basilica
         sub_title: Machine Learning Engineer
         caption: November 2019 - April 2020
         description: | # this will include new lines to allow paragraphs
-          - 텍스트 및 이미지 분류 머신 러닝 모델 설계 및 훈련
-          - Neural network embeddings 생성 위한 데이터 수집, 정제 및 시각화
-          - 브라우저 확장 프로그램 위한 사용자 정의 API 설계
-          
+          - Designed and trained machine learning models for image and text classification tasks
+          - Compiled, processed, and visualized datasets for creating neural network embeddings
+          - Developed customized API endpoints dedicated to browser-extension compatibility
+
   - title: Side Projects # Title for the section
     layout: list # Type of content section (list/text)
     content:
       - layout: top
         title: Winecork
         description: | # this will include new lines to allow paragraphs
-          - 질문에 대한 답을 통해 근처 로컬 매장에서 픽업 가능한 와인을 추천해 주는 웹사이트([노션 포스트](https://www.notion.so/Winecork-2a1cb06960cf44649feb06b9076a3ba1?pvs=4))
-          - Go, PostgreSQL, AWS Beanstalk, Javascript
+          - Developed a web-based platform recommending locally available wines based on personalized questionnaire results. ([Post](https://www.notion.so/Winecork-2a1cb06960cf44649feb06b9076a3ba1?pvs=4))
+          - Go, PostgreSQL, AWS Beanstalk, JavaScript
           
       - layout: top
         title: dskim.blog
         description: | # this will include new lines to allow paragraphs
-          - 개인 기록용 블로그([노션 포스트](https://www.notion.so/dskim-blog-179170ed17e44113b0df31d852117c63?pvs=4))
-          - Node.js, Express, MongoDB, Go, PostgreSQL, Javascript, Heroku
+          - Built personal tech blog for project documentation, technical notes, and personal learning logs. ([Post](https://www.notion.so/dskim-blog-179170ed17e44113b0df31d852117c63?pvs=4))
+          - Node.js, Express, MongoDB, Go, PostgreSQL, JavaScript, Heroku
           
   - title: Education # Title for the section
     layout: list # Type of content section (list/text)

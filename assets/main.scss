@@ -18,6 +18,9 @@ h3 {
 }
 
 @media print {
+    h1 {
+        font-size: 3rem;
+    }
     p {
         font-size: 1.3rem;
     }
