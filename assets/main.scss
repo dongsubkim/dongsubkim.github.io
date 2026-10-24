@@ -17,15 +17,40 @@ h3 {
     border-bottom-style: solid;
 }
 
-@media print {
-    h1 {
-        font-size: 3rem;
+.project-details {
+    margin-top: 1rem;
+
+    summary {
+        color: #315f9b;
+        cursor: pointer;
+        display: list-item;
+        font-size: 1.6rem;
+        font-weight: 600;
+        line-height: 1.5;
+        list-style-position: inside;
+        padding: .5rem 0;
     }
+
+    summary:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 4px;
+    }
+
+    &[open] summary {
+        margin-bottom: 1rem;
+    }
+}
+
+@media print {
     p {
         font-size: 1.3rem;
     }
     li {
         font-size: 1.3rem;
+    }
+
+    h1 {
+        font-size: 3rem;
     }
 
     h3 {
