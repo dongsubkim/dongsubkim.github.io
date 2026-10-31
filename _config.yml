@@ -1,392 +1,241 @@
-# Site
+---
 repository: dongsubkim/dongsubkim.github.io
 favicon: images/favicon.ico
-
-# Content configuration version
 version: 2
-
-# Personal info
 name: Dong Sub (Dave) Kim
-title: Software Engineer with Efficiency · Backend & Platform
+title: Backend & Platform Engineer · Kotlin/Spring · Python/Django
 email: dskim9218@gmail.com
 website: https://dongsubkim.github.io
-phone: (+82) 010-3693-6883
-
-# Dark Mode (true/false/never)
+phone: "(+82) 010-3693-6883"
 darkmode: false
-
-# Social links
-# twitter_username: facespics
 github_username: dongsubkim
 linkedin_username: dong-sub-kim-699956138
-# stackoverflow_username: "00000001"
-# dribbble_username: jekyll
-# facebook_username: jekyll
-# flickr_username: jekyll
-# instagram_username: jameswgrant
-# xing_username: jekyll
-# pinterest_username: jekyll
-# youtube_username: globalmtb
-# googleplus_username: +jekyll
-# orcid_username: 0000-0000-0000-0000
-
-# Additional icon links
 additional_links:
-- title: Portfolio
-  icon: fas fa-globe
-  url: https://dongsubkim.github.io
-# - title: another link
-#   icon: font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&m=free)
-#   url: Link url (eg. https://google.com)
-
-# Google Analytics and Tag Manager
-# Using more than one of these may cause issues with reporting
-# gtm: "GTM-0000000"
-# gtag: "UA-00000000-0"
-# google_analytics: "UA-00000000-0"
-
+- title: Resume (PDF)
+  icon: fas fa-file-pdf
+  url: https://dongsubkim.github.io/resume.pdf
 lang: en
 url: https://dongsubkim.github.io
-
+about_title: About Me
 about_profile_image: images/profile.jpg
-about_content: |
-  I am a backend engineer with 5+ years of experience building customer-facing platforms. At Sendbird, I work on customer-support ticketing, the customer dashboard platform, and a chat API gateway. Previously, I owned seller-account, supply-chain, and logistics services at Bucketplace.
+about_content: |-
+  Backend engineer with 5+ years turning operations-floor requirements into data models and services, designed with maintainability and extensibility as first-order concerns.
 
-  My work includes migrating **181,140 support tickets** and reducing an agent-statistics API from **64s to 5.88s**. I build with Python/Django and Kotlin/Spring on Kubernetes, document technical decisions, verify changes against production behavior, and share reusable tools with my team.
+  What I enjoy most is encoding complex business rules so the system makes the call. At Bucketplace, purchase orders and inbound receiving went from spreadsheets and phone calls to multi-center logistics, partner-booked inbound slots and backorders on virtual inventory, with the operations team's judgment turned into settings ([Project 3](#project-3)). At Sendbird the same habit went into a 181,140-ticket migration built to be rerun safely ([Project 1](#project-1)) and a chat API gateway's rate-limiting policies ([Project 2](#project-2)).
 
+  Before building a feature I settle with product and operations whether it is needed and which structure fits. After an incident I trace the cause in logs and data and turn the fix into a shared rule so it does not recur.
 content:
-  - title: "Highlights"
-    layout: text
-    content: |
-      - **181,140 tickets** migrated from a third-party ticketing system into Sendbird's product and validated; generalized into a reusable Zendesk → Sendbird migration engine.
-      - **64s → 5.88s (−91%)** on an agent-statistics API for an 11,857-agent customer; −40% DB queries in metrics collection.
-      - **EC2 → Kubernetes** migration of an internal service, **ElastiCache/TLS** for three services, **OpenTelemetry** tracing across four.
-      - **Distributed rate limiting, traffic blocking and service authentication** for a chat API gateway in Kotlin/Spring Cloud Gateway.
-      - **724 PRs authored, 1,744 reviewed, 75 design/RCA docs** in 13 months; **30+ AI-agent workflows** shared with the team.
-
-  - title: "Experiences"
-    layout: list
-    content:
-      - layout: top
-        title: "Sendbird"
-        sub_title: "Software Engineer, Comms Applications (Backend)"
-        caption: "September 2025 – Present · Seoul"
-        description: |
-          Backend for Sendbird Desk (customer-support ticketing with AI agents), the customer dashboard platform (accounts, permissions, billing, internal operations) and the next-generation chat API gateway (Kotlin).
-
-          **Ticketing-system migrations**
-          - Owned backend design and production execution of the company's first support-history migration from a third-party ticketing system into the AI-fronted ticketing product: rerunnable idempotent migrators, identifier/status mapping, search-index rebuild (~220k documents), post-batch validation — **181,140 tickets migrated and validated**.
-          - Built and demo-validated a reusable Zendesk → Sendbird migration engine: chunked self-chaining jobs within worker time limits, email-only export source, pre-flight checks, cross-organization identity aliasing, staleness reconcile with heartbeat/lease.
-
-          **Performance and reliability**
-          - Cut the agent-performance statistics API from **64s to 5.88s (−91%)** for a customer with 11,857 agents (paginate first, defer ORM prefetches, remove repeated QuerySet evaluation); −40% database queries in the metrics collector; cached hot-path permission lookups (3 → 1 SELECT per request).
-          - Made ticket closing concurrency-safe (row lock, commit-then-publish) and built async bulk closing with Redis job state and per-project single-active slots, sized from production latency (close p50 0.22s → 100 tickets in ~20–30s).
-          - Root-caused production incidents from data: a mail-queue alert → outbound HTTP timeout standard (8-PR stack); 60s+ settings-copy timeouts → async; a 50% account-creation race fixed same day; a read-replica saturation where one SELECT drove 98% of load; stranded deletion runs recovered.
-
-          **Platform**
-          - Led the application side of moving an internal operations service from EC2 VMs to **Kubernetes (EKS)** with the infrastructure team (Docker/GitHub Actions/Helm, ArgoCD, External Secrets, worker/beat cut-over), verifying zero residual EC2 traffic before decommission.
-          - Moved three services from RabbitMQ and in-cluster Redis to managed ElastiCache with Redis/MySQL TLS; rolled OpenTelemetry trace-context logging across four services and wrote the onboarding guide.
-          - Built **distributed rate limiting** for the chat API gateway in **Kotlin / Spring Cloud Gateway**: MySQL/Flyway policy store → Redis snapshot → local cache with Pub/Sub invalidation, atomic multi-window counters, standard 429 + adaptive denial; manual traffic blocking with audit trail; Okta-protected admin APIs/UI; Edge config API with ETag; decision logs to Prometheus and BigQuery. Found and fixed a partial-write failure that appeared only on serverless Redis (47/47 live checks across two pods).
-          - Designed and implemented bidirectional pre-shared-key authentication between the gateway, chat core and ticketing product after inventorying 39 APIs across 52 files.
-
-          **Product features (end to end with FE/PM/QA)**
-          - AI-voice-to-human call handoff: idempotent call sessions keyed by conversation, routing coordinator (offer/accept/decline), webhook-driven state transitions, timeouts, occupied-agent guards (347-test integration PR).
-          - Time-based ticket automation: rule CRUD/validation/reorder plus a Celery scheduling runtime with due-time calculation, bounded per-project dispatch, lease recovery and version fencing.
-          - Customizable manager reports: immutable presets/revisions/publications, data-platform and LLM integrations with guards, ACL sharing, stateless preview, async CSV/ZIP export.
-          - Outbound (proactive) customer email with AI-agent selection; Jira OAuth integration (first ownership, shipped within weeks of joining); actual-handling-time analytics and export; backend for a project-scoped group-channel event bus; language-aware assignment rules with backup teams; Platform API rate limiting.
-
-          **Security and compliance**
-          - Customer-facing audit/access-log API served from BigQuery (retention and rate limits, auth-endpoint exclusion, PII purge, public docs); GDPR sub-processor notification system; AI-agent role access modes with a zero-data-loss three-phase rollout (dual-write → backfill → cleanup); Dashboard OTP customer-approval flow; CloudFront signed-URL downloads; 10+ vulnerability remediations.
-
-          **Engineering velocity**
-          - Stacked-PR CI policy and cached test images with parallel service start-up across four repositories; multi-region release automation (13–14 regions per release).
-          - 30+ reusable AI coding-agent skills and 14 custom agents (release/deploy, review loops, Jira/worktree setup, evidence logs, debug-pod forensics) adopted by the team; a 54k-character implementation guide that let a teammate ship parent–child tickets.
-          - 724 PRs authored (669 merged), 1,744 PRs reviewed, 441 Jira issues, 75 Confluence pages (54 design/RCA/runbook docs) across 11 repositories.
-
-      - layout: top
-        title: "Bucketplace (오늘의집)"
-        sub_title: "Software Engineer"
-        caption: "September 2021 – September 2025 · Seoul"
-        description: |
-          **Seller (partner) account service**
-          - Built a Kotlin/Spring MSA seller-account service replacing a Ruby on Rails monolith; migrated **~40,000 accounts** with dual-write logic for uninterrupted service.
-          - Moved from session-based auth to **JWT + Redis with email/SMS two-factor authentication**. [Technical write-up](https://speckle-neem-ab4.notion.site/SMS-Email-2-0fa9323fdf444e5cbacb325664085209?pvs=4)
-          - OTP-secured JWT impersonation for internal staff; Spring Cloud Gateway auth filters shared across microservices; standardized error handling and API exception responses (76.3% test coverage).
-
-          **Supply Chain Management (SCM)**
-          - Built the Kotlin/Spring purchase-order/inbound microservice that replaced manual processes, improving data accuracy and traceability.
-          - **Multi-database transactions (MongoDB + MySQL)** through custom Hibernate interceptors. [Technical write-up](https://speckle-neem-ab4.notion.site/MySQL-MongoDB-a53d3a06551d47d78cb8536a27888e8f?pvs=4)
-          - Single- to multi-center logistics; redesigned ordering, inbound and order-creation processes.
-          - Regional direct shipping: **−15% product damage rate, −27% delivery lead time**; cross-MSA shipping-capacity integration: **~20M KRW/month outsourcing cost and 166 working hours/month saved**.
-          - Introduced Detekt, ktlint and JaCoCo; resolved 814 code smells and raised coverage by 10 percentage points.
-
-          **Logistics renewal & SAP integration**
-          - Redesigned purchase-order/inbound data models for SAP and external-system integration, migrating **~176,000 records** to a new codebase.
-          - Defined requirements and priorities directly with operations teams in the absence of a product owner.
-          - Backordering system enabling orders without pre-existing inventory; monorepo architecture removing duplicated code; **87.6–95.9% test coverage**; Spring Boot 2 / JDK 11 → Spring Boot 3 / JDK 21.
-
-      - layout: top
-        title: "Naver Corporation"
-        sub_title: "Software Engineer Intern"
-        caption: "October 2020 – January 2021"
-        description: |
-          - Processed and refined 50,000-song lyric datasets with Pandas; trained multi-GPU PyTorch models for syllable-level song/lyric synchronization; maintained internal Python/Django analytics dashboards.
-
-      - layout: top
-        title: "Basilica"
-        sub_title: "Machine Learning Engineer"
-        caption: "November 2019 – April 2020"
-        description: |
-          - Designed and trained image/text classification models; built dataset and embedding pipelines; developed API endpoints for a browser-extension client.
-
-  - title: "Selected Projects"
-    layout: list
-    content:
-      - layout: top
-        title: "Migrating 181,140 support tickets from a third-party ticketing system"
-        caption: "Sendbird"
-        description: |
-          Migrated and validated **181,140 tickets** with rerunnable batches and record-level checks.
-
-          <details class="project-details" markdown="1">
-          <summary>Read the case study</summary>
-
-          **Problem**
-
-          A customer was moving primary email support from Sprinklr to Sendbird's ticketing product with an AI agent in front. No migration tool, API or runbook existed, and correctness had to be proven against real customer data.
-
-          **What I did**
-
-          Owned the product-side implementation and production execution (chat/AI extraction was a teammate's). Mapped identifiers, statuses and email payloads so historical threads rendered correctly; made the migrator idempotent so any batch could be rerun; set ticket status programmatically to avoid overloading auto-routing; rebuilt the search index (~220k); wrote a post-batch validation script that checked every source record had a matching ticket. When one batch showed 6,988 vs 6,977 entries, I traced the gap to 11 late mappings instead of assuming loss. Rolled back immediately when a related deploy hit a duplicate-index failure.
-
-          **Result**
-
-          181,140 tickets migrated and validated (March 2026). The learnings informed a reusable Zendesk → Sendbird engine, implemented and validated in demos: a single orchestrator over three services, 300-second-safe chunked jobs, pre-flight checks, cross-organization email aliasing, and reconcile loops for lost callbacks.
-
-          **Tech**
-
-          Python, Django ORM, Celery, S3, OpenSearch, debug-pod execution, validation scripts.
-
-          </details>
-
-      - layout: top
-        title: "Distributed rate limiting and traffic control for a chat API gateway"
-        caption: "Sendbird"
-        description: |
-          Built distributed traffic control and verified **47/47 checks across two gateway pods**.
-
-          <details class="project-details" markdown="1">
-          <summary>Read the case study</summary>
-
-          **Problem**
-
-          The next-generation chat platform's gateway needed per-app/user/IP limits with multiple time windows, default and custom policies, manual blocking, and consistent behavior across pods — on a serverless Redis with slot constraints.
-
-          **What I did**
-
-          Designed and built it in Kotlin / Spring Cloud Gateway: policies in MySQL (Flyway/JPA) → Redis snapshot → bounded local cache with Pub/Sub invalidation; Valkey atomic counters; standard 429 responses with adaptive denial; manual blocking with MySQL audit and propagation; Okta-protected Backoffice APIs/UI; an Edge-only config API with ETag/304; decision logs and Prometheus counters shipped through Fluent Bit to BigQuery and Grafana. Found a failure that only appeared on serverless Redis — the final Lua PUBLISH failing returned 503 while state had already changed — and split state updates from notifications.
-
-          **Result**
-
-          47/47 manual-block checks passed in a live region across two pods, with 12 admin operations matched against audit/revision records. Also designed bidirectional pre-shared-key authentication across gateway, chat core and ticketing product after inventorying 39 APIs.
-
-          **Tech**
-
-          Kotlin 2.3, JDK 25, Spring Cloud Gateway, Flyway/JPA, Redis/Valkey, Lua, Okta, Prometheus, Fluent Bit, BigQuery.
-
-          </details>
-
-      - layout: top
-        title: "Agent-statistics API: 64s → 5.88s"
-        caption: "Sendbird"
-        description: |
-          Reduced response time from **64s to 5.88s (−91%)** on an 11,857-agent workload.
-
-          <details class="project-details" markdown="1">
-          <summary>Read the case study</summary>
-
-          **Problem**
-
-          For a customer with 11,857 agents, the agent-statistics endpoint loaded every agent with related data and serialized all of it before paginating, taking ~64 seconds and causing 502s.
-
-          **What I did**
-
-          Queried lightweight IDs/display names first, deferred heavy `select_related`/prefetch and serialization to the 20 agents on the page, and removed repeated QuerySet evaluation that re-ran subqueries per filter. Confirmed the gain with Data Infra and the customer's monitoring.
-
-          **Result**
-
-          64s → 5.88s (−91%) on the same workload. Follow-ups: −40% DB queries in the metrics collector, cursor pagination, search-index counts, cached per-request permission lookups.
-
-          **Tech**
-
-          Django ORM, MySQL, OpenSearch, SQL commenter-based regression tests.
-
-          </details>
-
-      - layout: top
-        title: "EC2 → Kubernetes migration of an internal operations service"
-        caption: "Sendbird"
-        description: |
-          Moved an internal service to **Kubernetes**, confirming zero residual EC2 traffic before retirement.
-
-          <details class="project-details" markdown="1">
-          <summary>Read the case study</summary>
-
-          **Problem**
-
-          One internal service still ran on EC2 VMs with its own build, secrets and worker setup, diverging from the Kubernetes-managed platform.
-
-          **What I did**
-
-          Owned the application side with the infrastructure team: Docker and GitHub Actions, Helm charts and values, ArgoCD release flow, External Secrets/Doppler, health checks, Redis/MySQL TLS, worker/beat cut-over; staged rollout (staging → production), then checked logs/Grafana for residual EC2 API traffic before requesting decommission. Later tuned Gunicorn worker recycling after quantifying memory pressure (~4.3k calls in 39 minutes).
-
-          **Result**
-
-          Zero residual traffic confirmed and EC2 retired; the service now builds, deploys and operates like the rest of the platform; OpenTelemetry tracing followed across four services.
-
-          **Tech**
-
-          Kubernetes (EKS), Helm, ArgoCD, GitHub Actions, External Secrets, ElastiCache, OpenTelemetry/Tempo, Grafana.
-
-          </details>
-
-      - layout: top
-        title: "AI-voice-to-human call handoff"
-        caption: "Sendbird"
-        description: |
-          Built an idempotent call-handoff backend, validated in a **347-test integration PR**.
-
-          <details class="project-details" markdown="1">
-          <summary>Read the case study</summary>
-
-          **Problem**
-
-          When an AI voice agent needs to hand a live call to a human, offers, acceptances, declines, timeouts, hang-ups and webhooks arrive asynchronously, and agent occupancy and ticket state must stay consistent.
-
-          **What I did**
-
-          Built the domain model (VoiceCallSession keyed by conversation for idempotency), a project-level routing coordinator with offer/accept/decline APIs, join-token and recording lookups, AI-agent webhook processing, timeout lifecycle, and guards for occupied agents and ordinary ticket-change paths; excluded voice tickets from chat routing capacity; two QA rounds.
-
-          **Result**
-
-          MVP merged with a 347-test integration PR; follow-ups for eligibility sync and async routing after decline.
-
-          **Tech**
-
-          Django, Celery, webhook idempotency, state machines, Open Channel events.
-
-          </details>
-
-      - layout: top
-        title: "Turning a mail-queue alert into an outbound-timeout standard"
-        caption: "Sendbird"
-        description: |
-          Replaced unbounded outbound requests with a shared timeout standard across **172 files**.
-
-          <details class="project-details" markdown="1">
-          <summary>Read the case study</summary>
-
-          **Problem**
-
-          A worker alert on mail delivery kept firing. Increasing worker capacity alone would not address the cause.
-
-          **What I did**
-
-          Traced the code paths: long organization-sync tasks were starving the default Celery queue, and outbound HTTP calls had no timeouts. Added mail-queue health metrics and PagerDuty-visible alerts, an immediate single-mail send path, queue separation, and then a shared HTTP client with timeout coverage across 172 files, a guard against new unbounded `requests` calls, and queue-fairness fixes in two more services.
-
-          **Result**
-
-          Addressed the failure mode with bounded HTTP calls and queue separation; the same pattern was reused for later incidents.
-
-          **Tech**
-
-          Django, Celery, requests, Prometheus/Grafana, PagerDuty.
-
-          </details>
-
-      - layout: top
-        title: "AI-assisted engineering as a team capability"
-        caption: "Sendbird"
-        description: |
-          Shared **30+ reusable AI coding workflows and 14 custom agents** with the team.
-
-          <details class="project-details" markdown="1">
-          <summary>Read the case study</summary>
-
-          **Problem**
-
-          As a new engineer in services with years of accumulated behavior, answering customer questions or debugging incidents meant searching code, Confluence, Jira, Slack, DB rows and logs one source at a time.
-
-          **What I did**
-
-          Built 30+ reusable Claude Code / Codex skills and 14 custom agents: release/deploy automation (CalVer tags, dev/official workflows, multi-region deploy PRs), Slack review requests, Jira-keyed worktrees, daily/weekly evidence logs, debug-pod execution, BigQuery/Grafana/Sentry access, a spec-first design → implementation → review → release pipeline. Shared them with the team and used them for live cross-system forensics on production pods.
-
-          **Result**
-
-          Faster ramp-up and customer answers backed by production evidence; teammates run releases and review requests from the same skills. Every agent-produced result is verified against real system behavior before it ships.
-
-          **Tech**
-
-          Claude Code, Codex CLI, MCP servers, Python tooling.
-
-          </details>
-
-  - title: "Side Projects"
-    layout: list
-    content:
-      - layout: top
-        title: "Winecork"
-        description: |
-          Web platform recommending locally available wines from a personalized questionnaire. Go, PostgreSQL, AWS Elastic Beanstalk, JavaScript. [Project write-up](https://www.notion.so/Winecork-2a1cb06960cf44649feb06b9076a3ba1?pvs=4)
-
-      - layout: top
-        title: "dskim.blog"
-        description: |
-          Personal tech blog for project write-ups and learning logs. Node.js, Express, MongoDB, Go, PostgreSQL, JavaScript, Heroku. [Project write-up](https://www.notion.so/dskim-blog-179170ed17e44113b0df31d852117c63?pvs=4)
-
-  - title: "Education"
-    layout: list
-    content:
-      - layout: top
-        title: "University of California, Berkeley"
-        caption: "2012 – 2019"
-        description: |
-          Bachelor's Degree in Computer Science & Applied Mathematics
-
-          GPA: 3.80 / 4.00 · Major GPA: 3.88 / 4.00
-
-  - title: "Skills"
-    layout: text
-    content: |
-      - **Languages:** Python, Kotlin, Java, TypeScript, SQL
-      - **Frameworks:** Django, Django REST Framework, Celery, Spring Boot, Spring Cloud Gateway, Spring Data JPA, Spring Batch, Next.js
-      - **Data:** MySQL (Aurora), Redis / ElastiCache, MongoDB, OpenSearch / Elasticsearch, BigQuery, Kafka
-      - **Platform & Ops:** Kubernetes (EKS), Helm, ArgoCD, GitHub Actions, Jenkins, AWS (S3, CloudFront, ElastiCache), External Secrets, OpenTelemetry, Grafana / Prometheus, Sentry
-      - **AI tooling:** Claude Code, Codex CLI, MCP servers, custom skills/agents, LLM-based product integrations
-
-# Footer
+- title: Highlights
+  layout: text
+  content: |-
+    - 181,140 support tickets migrated from a third-party ticketing system and validated; generalized into a reusable Zendesk → product migration engine. → [Project 1](#project-1)
+    - Distributed rate limiting, traffic blocking and service authentication for a chat API gateway in Kotlin / Spring Cloud Gateway. → [Project 2](#project-2)
+    - Four years owning a supply-chain backend: spreadsheets → single-center SCM → multi-center, partner self-service inbound scheduling, backorders on virtual inventory, SAP integration. → [Project 3](#project-3)
+    - A database-load incident turned into a three-month query-optimization program with the data-infrastructure team; a 502-causing API from 64s to 5.8s. → [Project 4](#project-4)
+    - A seller-account platform replacing a Rails monolith, ~40,000 accounts migrated with dual-write. → [Project 5](#project-5)
+- title: Experience
+  layout: list
+  content:
+  - layout: top
+    title: Sendbird
+    sub_title: Software Engineer, Comms Applications (Backend)
+    caption: September 2025 – Present · Seoul
+    description: |-
+      Customer-support ticketing product; the dashboard's authentication, permissions and account management; an internal operations back-office; the new chat platform's API gateway (Kotlin). Python/Django and Kotlin/Spring Cloud Gateway.
+
+      - **Omnichannel ticketing:** while maintaining the existing SDK flow where customers reach agents directly, built the handoff that turns AI-agent conversations on chat, email and voice into tickets for human agents on one platform (idempotent voice call sessions, routing coordinator, event-driven webhook state transitions).
+      - **Third-party ticket migration:** owned the ticketing-side design and production execution of the company's first support-history migration; 181,140 tickets migrated and validated; generalized into a reusable Zendesk → product migration engine. → [Project 1](#project-1)
+      - **Zendesk-parity features** for customers moving off Zendesk, delivered alongside the migration engine: time-based ticket automation with lease recovery, parent–child tickets, customizable manager reports.
+      - **Database load incident → three-month query-optimization program** with the data-infrastructure team; application-side owner. → [Project 4](#project-4)
+      - **Chat API gateway:** distributed rate limiting, traffic blocking and PSK service authentication on the rewrite of the legacy chat platform for AI agents (Kotlin / Spring Cloud Gateway). → [Project 2](#project-2)
+      - **Agent monitoring and statistics** over high-volume ticket data: statistics and summary APIs, report presets with asynchronous per-panel CSV ZIP export.
+      - **Platform and operations:** led the application side of moving an internal operations service from EC2 to Kubernetes (EKS) — parallel run on the same database, weighted DNS cutover, legacy decommission; OpenTelemetry tracing on owned services; a mail-queue incident RCA turned into asynchronous parallel bulk sending and an outbound HTTP timeout standard.
+      - **Team and reliability:** Jira OAuth integration shipped solo within two months of joining; stacked-PR CI policy across four repos; production RCAs from data (a ticket-assignment-latency analysis that became an assigned-time sort feature; a 1.98M-ticket first-assignment study used as input for a queue-position feature).
+  - layout: top
+    title: Bucketplace (오늘의집)
+    sub_title: Software Engineer
+    caption: September 2021 – September 2025 · Seoul
+    description: |-
+      Owned the SCM backend for four years — seller (partner) accounts, purchase-order/inbound supply chain, order management, logistics — in Kotlin / Spring microservices; defined requirements and priorities directly with operations teams when no product owner was assigned.
+
+      - **Seller-account platform** replacing a Ruby on Rails monolith; ~40,000 accounts migrated with dual-write. → [Project 5](#project-5)
+      - **SCM:** from spreadsheets to a system, then multi-center, partner self-service inbound scheduling, backorders on virtual inventory, SAP integration; ~176,000 legacy records migrated. → [Project 3](#project-3)
+      - **Entity change history** kept out of the main transaction: snapshots collected by Hibernate hooks are written to MongoDB after the MySQL commit, with failures isolated and reported to Slack for manual replay.
+      - **Logistics operations:** per-day configurable order cutoffs supporting a change that reduced reported monthly contractor costs by ~KRW 15–20M; regional direct shipping cut the product damage rate 0.80% → 0.68% and delivery lead time 7.9 → 5.7 days; TMS–OMS additional-delivery scheduling and capacity sync automated.
+      - **Engineering quality:** consolidated logistics/SCM repositories and entities; Detekt/ktlint/JaCoCo CI gates and team conventions (814 code smells resolved; new purchase-order/inbound services at 87.6–95.9% coverage per repo); Spring Boot 2 / JDK 11 → Spring Boot 3 / JDK 21.
+  - layout: top
+    title: Naver Corporation
+    sub_title: Software Engineer Intern
+    caption: October 2020 – January 2021
+    description: "- Processed 50,000-song lyric datasets with Pandas and trained multi-GPU PyTorch models for syllable-level song/lyric synchronization; maintained internal Python/Django analytics dashboards."
+  - layout: top
+    title: Basilica
+    sub_title: Machine Learning Engineer
+    caption: November 2019 – April 2020
+    description: "- Designed and trained image/text classification models and embedding pipelines; built API endpoints for a browser-extension client."
+- title: Selected Projects
+  layout: list
+  content:
+  - layout: top
+    title: 1. Migrating 181,140 support tickets from a third-party ticketing system, and the migration engine that came out of it
+    caption: Sendbird · 2026.01 – 07 · Python/Django, Celery, MySQL
+    description: |-
+      <div id="project-1" class="project-anchor" tabindex="-1"></div>
+
+      181,140 tickets migrated and validated; the approach became a reusable Zendesk → product migration engine.
+
+      <details class="project-details" markdown="1">
+      <summary>Read the case study</summary>
+
+      - **Problem.** A customer had to move its entire support history from a third-party ticketing system into our ticketing product with an AI agent in front. No migration tool, API or runbook existed.
+      - **Why it mattered, and the constraints.** This was real customer support data: no loss and no duplicates. The existing service and its auto-assignment logic had to keep working during the migration. The source API's rate limits, field-length limits, deleted categories and null values surfaced at every step.
+      - **Role and decisions.** I owned the product-side implementation and the production execution for email-based tickets (a teammate handled the chat/AI side), then generalized the work into a Zendesk migration API for tickets, customers and agent accounts and released it.
+        - *Cutover approach.* The customer's support team worked fixed hours, so a short downtime outside those hours was acceptable. I confirmed that first, then chose pre-migration → short cut-over → delta re-collection over fully continuous sync: three years of history were migrated ahead of time; inbound email routing was switched from the old system to ours; mail that landed in the old system in between was re-fetched by `updated_at` in two or three passes until nothing new appeared.
+        - *Rerunnable by design.* Because API limits, oversized fields, deleted categories and nulls were expected in every batch, the migrator was idempotent on external identifiers from the start: a failed batch is fixed for its cause and rerun.
+        - *Verification.* Each batch was checked by a script comparing source records with created tickets. When counts disagreed (6,988 vs 6,977), I traced it to 11 delayed mappings rather than assuming loss.
+      - **Result.** 181,140 tickets migrated and validated. The approach became a reusable Zendesk → product migration engine: a single orchestrator, chunk chaining inside a 300-second worker limit, preflight checks, cross-organization email alias handling, and a reconcile loop for lost callbacks.
+      - **Tech.** Python, Django ORM, Celery, MySQL, OpenSearch, validation scripts run from debug pods.
+
+      </details>
+  - layout: top
+    title: 2. Distributed rate limiting and traffic control for a chat API gateway
+    caption: Sendbird · 2026.07 – 10 · Kotlin / Spring Cloud Gateway, JPA, MySQL, Valkey (Redis)
+    description: |-
+      <div id="project-2" class="project-anchor" tabindex="-1"></div>
+
+      Distributed rate limiting, traffic blocking and PSK authentication implemented; in QA as of October 2026.
+
+      <details class="project-details" markdown="1">
+      <summary>Read the case study</summary>
+
+      - **Problem.** The gateway of the next-generation chat platform had no per-app/user/IP limits, no multi-window budgets, no default/custom policies and no manual blocking, and every pod had to apply the same policy consistently.
+      - **Why it mattered, and the constraints.** The gateway is the single path for all traffic, so it must add almost no latency while protecting availability; counters and settings must agree across pods. The production Redis was serverless (slot constraints), and policy changes had to propagate in near real time.
+      - **Role and decisions.** I owned research, design, implementation and verification of rate limiting and traffic control for the new gateway.
+        - *Algorithm.* The legacy platform used a custom GCRA limiter that ran a heavy Lua script on every request and loaded Redis. The new backend serves mostly 1:1 conversations between an AI agent and a customer, so it does not need to absorb the thousands-of-users-in-one-channel bursts the chat SDK sees. After sharing a comparison with the team I chose multi-window fixed-window counters: cheap to compute, and splitting into 1-second and 60-second windows catches short bursts while still enforcing ordinary limits. All windows of one rule/scope are checked and updated atomically in one small Lua script.
+        - *Policy structure.* Customers are on different plans with different volumes, so limits had to be adjustable per customer: default rules with per-customer custom rules on top. Policies live in MySQL and propagate as a Redis snapshot and pod-local cache; Pub/Sub invalidation is backed by revision polling so a lost notification cannot leave a pod stale.
+        - *Blocking.* Abnormal traffic had reached the legacy system before and had to be stopped by the system, not by a person. Three layers, ordered by where blocking is cheapest: early deny of IPs before authentication, manual blocking of user/app IDs from the back-office at the very front (with an audit trail), and adaptive deny that cuts off callers who keep hitting the limit after being throttled.
+        - *Service-to-service auth.* Designed and built PSK authentication between the gateway and internal services (chat core, ticketing product). The ticketing product, which I own, accepts both the legacy chat auth and the new one behind a flag, so the switch is decoupled from code deploys.
+      - **Result (in QA).** Policy storage, propagation and counters, admin API and UI, early/adaptive deny and PSK auth are implemented; decision logs for throttled users/apps flow to Grafana and BigQuery through a pipeline built with the data-platform team. Expected effect at launch: lower Redis load than the per-request Lua path. Compute/DB savings from replacing the legacy chat system are not yet measured.
+      - **Tech.** Kotlin, Spring Cloud Gateway, Spring Data JPA, MySQL, Valkey/Redis (Lua), Pub/Sub, Grafana, BigQuery.
+
+      </details>
+  - layout: top
+    title: '3. Building the SCM and changing its shape: multi-center, partner inbound scheduling, backorders on virtual inventory, SAP integration'
+    caption: Bucketplace · 2022 – 2025 · Kotlin/Spring, JPA, MySQL, MongoDB
+    description: |-
+      <div id="project-3" class="project-anchor" tabindex="-1"></div>
+
+      Four years evolving the SCM from spreadsheets into multi-center logistics, partner scheduling, backorders and SAP integration.
+
+      <details class="project-details" markdown="1">
+      <summary>Read the case study</summary>
+
+      - **Problem.** Purchase orders and inbound receiving ran on manual work and spreadsheets. After they were systematized, growth kept forcing structural change: one warehouse became several; inbound schedules were negotiated by phone and tracked in spreadsheets; orders could not exceed on-hand stock; purchase orders and inventory had to be integrated with SAP.
+      - **Why it mattered, and the constraints.** Logistics cannot pause, so purchase orders, receiving and shipping had to keep flowing while the structure changed underneath. Business rules with many edge cases — inter-center transfers, outbound-center selection — had to be encoded correctly. For the SAP work there was no product owner, so requirements were defined directly with operations.
+      - **Role and decisions.** I owned the SCM backend for four years.
+        - *Backorders, which I proposed, then virtual inventory.* Orders could not be taken before stock arrived. Furniture delivery happens well after purchase, and the inbound-reservation system told us when each SKU would arrive and in what quantity, so I proposed taking orders against reserved inbound quantity. We started with a minimal scope to confirm operations could absorb it, then moved to virtual inventory: operations set, per SKU, what share of the reserved quantity may be sold (low for SKUs with high damage rates, high for reliable ones). Escalation rules — emergency purchase orders, delivery-date changes agreed with the customer — were defined with the operations team.
+        - *The center as a domain model.* With one warehouse, the center was a string baked into code. I redefined it as a domain model wired through every related entity and designed for more centers than two. Per-center stock for the same SKU, inter-center transfers and outbound-center selection had many edge cases, so I walked through the use cases with the PO in detail before building.
+        - *Inbound scheduling as partner self-service.* Operations used to call each supplier and keep the schedule in a spreadsheet. Now a supplier who has received a purchase order books an open inbound slot on the partner portal and operations only approve. Per-center slots and time windows are admin-configurable, so schedule changes need no code change.
+        - *SAP integration.* Scope and priorities were set with operations in the absence of a product owner. The purchase-order model was reworked to the SAP purchase-order spec, the inventory model extended so center stock flows to both the commerce system and SAP, and the purchase-order ERD and goods-receipt interface were redesigned in coordination with other teams and external systems.
+        - *Change history.* Entity change history is log-like, so it stays out of the main transaction: snapshots gathered by Hibernate hooks are written to MongoDB after the MySQL commit, failures are isolated and reported to Slack for manual replay.
+      - **Result.** Purchase orders and receiving went from spreadsheets and phone calls to a single-center SCM, and from there to a system that supports multiple centers, partner self-service scheduling, orders before stock arrives and SAP integration. ~176,000 legacy logistics records were migrated to the new models, and the schedule coordination and stock-buffer decisions that operations used to make by hand became system settings.
+      - **Tech.** Kotlin, Spring Boot, Spring Data JPA, MySQL, MongoDB, Kafka, Spring Batch.
+
+      </details>
+  - layout: top
+    title: 4. A database-load incident turned into a three-month query-optimization program
+    caption: Sendbird · 2026.01 – 04 · Python/Django, MySQL, OpenSearch
+    description: |-
+      <div id="project-4" class="project-anchor" tabindex="-1"></div>
+
+      A production incident became a three-month optimization program; a 502-causing API went from 64s to 5.8s.
+
+      <details class="project-details" markdown="1">
+      <summary>Read the case study</summary>
+
+      - **Problem.** The ticketing product's MySQL in its busiest region kept hitting CPU spikes. Deep-offset polling by a large customer and count queries scanning months of rows were the cause, and one statistics API call for a customer with 11,857 agents once occupied every worker and produced a 502.
+      - **Why it mattered, and the constraints.** Live support ran on this database, so schema and query changes had to happen in production without stopping the service. The search index (OpenSearch) lagged by about 30 seconds, so moving counts there risked inconsistency. Infrastructure (replica sizing, indexes, ProxySQL caching) belonged to the data-infrastructure team; application changes were mine; we split action items in a weekly sync (11 sessions).
+      - **Role and decisions.** As the ticketing backend owner I reviewed slow and high-row-scan queries with the data-infrastructure team each week and owned the application side. For each query the question was whether an index would do, whether the query could be removed, or whether it belonged in another store — decided by measurement.
+        - *Measure before fixing.* The 502 looked like a SQL problem, but reconstructing the timeline from nginx logs showed SQL at 6 seconds and serialization at 59. Instead of tuning the query I fixed serialization in two steps: remove unnecessary serializers (64s → 17s), then prefetch only the 20 agents on the page (5.8s).
+        - *Remove the count or move it.* Dashboard count queries scanned months of rows on every request. List APIs moved to cursor pagination so the count disappeared; large-range counts that could not be removed moved to OpenSearch, with a MySQL fallback on mismatch or timeout because of the sync lag. I proposed an `updated_at` index, which the data-infrastructure team rolled out to all regions.
+        - *Measure rather than rewrite.* Three proposed rewrites of the statistics query (CTE split, UNION split, JOIN removal) were benchmarked eight times on production data; all were 1.4–6.4× slower and were rejected. I fixed the query's actual filter bug (agent OR group) instead, and cut the metrics collector from 25 to 15 queries by removing duplicates, verifying identical results on 11 real-data cases across four regions.
+        - *Timeouts by pattern.* 2,763 OpenSearch timeouts were split into three filter patterns; the timeout was reduced to 3 seconds and only the worst pattern routed to MySQL.
+      - **Result.** The 502 was resolved the same week. By mid-March the data-infrastructure team's records showed lower overall database usage and fewer spikes in that region. In April the application-side action items were closed with numbers and the weekly sync ended. "Measure on real data, then change" became the pattern for later incidents.
+      - **Tech.** Python, Django ORM, MySQL, OpenSearch, nginx logs, Grafana, BigQuery.
+
+      </details>
+  - layout: top
+    title: 5. A seller-account platform replacing a Rails monolith
+    caption: Bucketplace · Kotlin/Spring, Spring Cloud Gateway, MySQL, Redis
+    description: |-
+      <div id="project-5" class="project-anchor" tabindex="-1"></div>
+
+      ~40,000 accounts migrated; partners gained multiple accounts with separate permissions.
+
+      <details class="project-details" markdown="1">
+      <summary>Read the case study</summary>
+
+      - **Problem.** The legacy Ruby on Rails monolith allowed one account per partner. Partners shared credentials, and permissions could not be separated between people at the same partner.
+      - **Why it mattered, and the constraints.** Partner accounts gate everything a seller does, so the switch could not break logins or lose accounts. The old and new systems had to coexist while every partner moved.
+      - **Role and decisions.** I built the Kotlin/Spring seller-account service and its migration.
+        - *Migration without a hard cutover.* A migration module read both the old and the new database, created accounts in the new service and kept both sides in sync with dual-write until the legacy path could be retired; ~40,000 accounts moved this way.
+        - *Authentication.* JWT with Redis-backed sessions, email/SMS verification, and partner-consented OTP access for internal staff who need to act on a partner's behalf. Shared Spring Cloud Gateway authentication filters were built with the core authentication team so other services could rely on the same checks.
+      - **Result.** ~40,000 accounts migrated; partners can hold multiple accounts with separate permissions; staff access is explicit and consented.
+      - **Tech.** Kotlin, Spring Boot, Spring Cloud Gateway, Spring Data JPA, MySQL, Redis, JWT.
+
+      </details>
+- title: Side Projects
+  layout: list
+  content:
+  - layout: top
+    title: MOGUM
+    sub_title: Filter-coffee brewing log · Personal project
+    link: https://www.mogumcoffee.app
+    link_text: mogumcoffee.app
+    description: |-
+      - Connects recipes with the beans and gear you own, runs the brew, and records conditions and results for the next one. Running as a PWA; a React Native (Expo) app is planned.
+      - Sole owner from product design through the Kotlin/Spring Boot API (PostgreSQL, Spring Data JPA, Flyway, OAuth2/JWT), the Next.js web app, deployment and operations. TypeScript client generated from the OpenAPI contract; Testcontainers-based PostgreSQL integration tests cover authorization and data-preservation paths.
+      - Implementation is Codex-driven while product decisions, domain model, API contract and test criteria are mine; work is split across role-based subagents to keep context and token use small. Design examples: each brew stores an immutable snapshot of recipe revision, beans, gear and actual conditions, decoupled from later edits; the timer runs on a client clock and replays events with the same IDs and order after a temporary offline gap.
+- title: AI-Assisted Engineering
+  layout: text
+  content: |-
+    - Turned recurring work into reusable Claude Code / Codex skills and custom agents shared with the team: the release pipeline (tag → dev/official deploy workflows → deploy PRs → Slack review request), Jira ticket and worktree setup, PR authoring and review requests, daily work-evidence logs. Skills are kept working in both Claude Code and Codex.
+    - Used them for incident analysis: tooling that combines debug-pod execution, BigQuery, Grafana and Sentry to gather production evidence for RCAs (the 1.98M-ticket first-assignment study, an RDS memory-exhaustion RCA, the mail-queue incident).
+    - Spec-first pipeline with role-specific agents (requirements brief → design and design critique → implementation → tests and review → stacked-PR plan). Every agent result is checked against real system behavior before it is adopted, e.g. three proposed statistics-query rewrites rejected after benchmarking on production data ([Project 4](#project-4)).
+- title: Skills
+  layout: text
+  content: |-
+    - **Languages:** Kotlin, Java, Python, SQL, TypeScript
+    - **Frameworks:** Spring Boot, Spring Cloud Gateway, Spring Data JPA / Hibernate, Spring Batch, Django, Django REST Framework, Celery
+    - **Data:** MySQL, Redis / ElastiCache, MongoDB, OpenSearch / Elasticsearch, BigQuery, Kafka
+    - **Platform & Observability:** Kubernetes (EKS), Docker, Helm, ArgoCD, GitHub Actions CI/CD, AWS, OpenTelemetry, Prometheus / Grafana, Sentry
+    - **AI tooling:** Claude Code, Codex, MCP (Slack, Jira/Confluence, GitHub, BigQuery)
+- title: Education
+  layout: list
+  content:
+  - layout: top
+    title: University of California, Berkeley
+    caption: 2012 – 2019
+    description: |-
+      Bachelor's Degree in Computer Science & Applied Mathematics
+
+      GPA: 3.80 / 4.00 · Major GPA: 3.88 / 4.00
 footer_show_references: false
-
-# Build settings
 remote_theme: sproogen/resume-theme
-
 sass:
   sass_dir: _sass
   style: compressed
-
 plugins:
-  - jekyll-seo-tag
-
-# Jekyll 3 replaces its default exclusions when this list is set.
+- jekyll-seo-tag
 exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-  - README.md
-  - LICENSE
-  - resume.html
-  - main.css
+- Gemfile
+- Gemfile.lock
+- node_modules
+- vendor/bundle/
+- vendor/cache/
+- vendor/gems/
+- vendor/ruby/
+- README.md
+- LICENSE
+- resume.html
+- main.css

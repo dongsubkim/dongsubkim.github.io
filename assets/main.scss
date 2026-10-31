@@ -17,6 +17,14 @@ h3 {
     border-bottom-style: solid;
 }
 
+.project-anchor {
+    scroll-margin-top: 2rem;
+}
+
+.page-content li + li {
+    margin-top: .6rem;
+}
+
 .project-details {
     margin-top: 1rem;
 
